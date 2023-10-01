@@ -1,0 +1,72 @@
+﻿
+@page "/orders"
+@using Clio.Demo.Data.Northwind;
+@using Clio.Demo.DataPresentation.Elements;
+@using Clio.Demo.DataPresentation.Gateway;
+@using Clio.Demo.DataPresentation.ViewModel;
+@using Syncfusion.Blazor.Grids;
+@inject NorthwindViewModel viewModel;
+
+<PageTitle>Northwind Trading company</PageTitle>
+
+<h1>Northwind Trading company</h1>
+
+<p>This component demonstrates retreiving data from remote REST server</p>
+
+@if (viewModel.Orders == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="col-lg-12 control-section">
+        <div class="content-wrapper">
+            <div class="row">
+                <SfGrid @ref="GridOrders" SelectedRowIndex=0 DataSource="@viewModel.Orders" TValue="OrderElement" Height="500" Toolbar="@(new string[] {"Add","Edit","Delete","Update","Cancel"})">
+                    <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="EditMode.Batch"></GridEditSettings>
+                    <GridEvents RowSelected="RowSelectHandler" TValue="OrderElement"></GridEvents>
+                    <GridColumns>
+                        <GridColumn Field=@nameof(OrderElement.CompanyName) HeaderText="Customer" Width="180"> </GridColumn>
+                        <GridColumn Field=@nameof(OrderElement.ContactName) HeaderText="Contact" Width="110"> </GridColumn>
+                        <GridColumn Field=@nameof(OrderElement.ShippedDate) HeaderText="Shipped" Width="100"></GridColumn>
+                        <GridColumn Field=@nameof(OrderElement.OrderDate) HeaderText="Ordersd" Width="100"></GridColumn>
+                        <GridColumn Field=@nameof(OrderElement.Address) HeaderText="Address" Width="250"></GridColumn>
+                        <GridColumn Field=@nameof(OrderElement.Phone) HeaderText="Phone" Width="110"></GridColumn>
+                        <GridColumn Field=@nameof(OrderElement.EmployeeName) HeaderText="Employee" Width="110"></GridColumn>
+                        <GridColumn Field=@nameof(OrderElement.EmployeeTitle) HeaderText="Title" Width="110"></GridColumn>
+                    </GridColumns>
+                </SfGrid>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div class='e-statustext'>Order details</div>
+                <SfGrid @ref="GridDeals" DataSource="@viewModel.Deals" TValue="DealElement" Height="100">
+                    <GridColumns>
+                        <GridColumn Field=@nameof(DealElement.ProductName) HeaderText="Product" Width="150"> </GridColumn>
+                        <GridColumn Field=@nameof(DealElement.Quantity) HeaderText="Quantity" Width="80"> </GridColumn>
+                        <GridColumn Field=@nameof(DealElement.UnitsInStock) HeaderText="In Stock" Width="80"> </GridColumn>
+                        <GridColumn Field=@nameof(DealElement.OrderPrice) HeaderText="Price" Width="80"> </GridColumn>
+                        <GridColumn Field=@nameof(DealElement.UnitPrice) HeaderText="Reg Price" Width="80"> </GridColumn>
+                        <GridColumn Field=@nameof(DealElement.CompanyName) HeaderText="Supplier" Width="180"> </GridColumn>
+                        <GridColumn Field=@nameof(DealElement.Address) HeaderText="Address" Width="250"></GridColumn>
+                        <GridColumn Field=@nameof(DealElement.Phone) HeaderText="Phone" Width="110"></GridColumn>
+                    </GridColumns>
+                </SfGrid>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private SfGrid<OrderElement> GridOrders { get; set; }
+    private SfGrid<DealElement> GridDeals { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await viewModel.Initialize();
+    }
+
+    public void RowSelectHandler(RowSelectEventArgs<OrderElement> Args)
+    {
+        viewModel.SelectedIndex = Args.Data.OrderID;
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WebAPIApp": {
+      "commandName": "Project",
+      "commandLineArgs": "port=4210 prefix=Clio"
+    }
+  }
+}

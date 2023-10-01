@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleDataTester": {
+      "commandName": "Project",
+      "commandLineArgs": "prefix=Clio"
+    }
+  }
+}

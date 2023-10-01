@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Demo.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Clio.Demo.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Operation\**" />
+    <Compile Remove="Processor\Data\**" />
+    <Compile Remove="ViewModel\**" />
+    <EmbeddedResource Remove="Operation\**" />
+    <EmbeddedResource Remove="Processor\Data\**" />
+    <EmbeddedResource Remove="ViewModel\**" />
+    <None Remove="Operation\**" />
+    <None Remove="Processor\Data\**" />
+    <None Remove="ViewModel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Data\Data.csproj" />
+  </ItemGroup>
+
+</Project>
