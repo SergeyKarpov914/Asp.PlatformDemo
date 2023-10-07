@@ -19,7 +19,7 @@ It seems, these diadrams and the rational behind them, promoted by variuos autho
 
 In his blog (circa 2012), Martin formulates his vision of the concept and published the, now so popular, circular diagram.
 
-![Robert Martin blog 2012](assets/images/CleanbyMartin.jpg)
+![Robert Martin blog 2012](assets/images/CleanByMartin.jpg)
 
 https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 
@@ -37,7 +37,7 @@ Incidentally, the software architecture circular diagram and dependency rules ca
 
 Jeffrey Palermo introduced an architectural pattern, called Onion Architecture, 15 years ago, in 2008.
 
-![Jeffrey Palermo blog 2008](assets/images/OnionbyPalermo.png)
+![Jeffrey Palermo blog 2008](assets/images/OnionByPalermo.png)
 
 https://jeffreypalermo.com/tag/onion-architecture/
 
