@@ -93,7 +93,7 @@ namespace Clio.Demo.Util
         public static string SqlFormatAssignProps<T>(T entity, IEnumerable<string> columns)
         {
             PropertyInfo[] props = typeof(T).GetProperties();
-            List<string> assignPirs = new List<string>();
+            List<string> assignPairs = new List<string>();
 
             foreach (string column in columns)
             {
@@ -102,14 +102,14 @@ namespace Clio.Demo.Util
 
                 if (null != (prop = props.FirstOrDefault(x => x.Name.EqualsNoCase(column))))
                 {
-                    assignPirs.Add($"{column}={(null != (value = prop.GetValue(entity)) ? sqlFormat(value) : SqlNull)}" );
+                    assignPairs.Add($"{column}={(null != (value = prop.GetValue(entity)) ? sqlFormat(value) : SqlNull)}" );
                 }
                 else
                 {
-                    assignPirs.Add($"{column}={SqlNull}");
+                    assignPairs.Add($"{column}={SqlNull}");
                 }
             }
-            return string.Join(",", assignPirs);
+            return string.Join(",", assignPairs);
         }
 
         public static string SqlClause(string column, IEnumerable<string> values)

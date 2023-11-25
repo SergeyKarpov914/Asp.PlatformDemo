@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "qP49neKq1rqd7q/pcaHF53uSYmsQgopqXkut8la40NY=",
+  "Source": "WebApiSignalRApp",
+  "BasePath": "_content/WebApiSignalRApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

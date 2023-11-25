@@ -22,12 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Data.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Syncfusion.Blazor.Core" Version="23.1.36" />
     <PackageReference Include="Syncfusion.Blazor.Grid" Version="23.1.36" />
     <PackageReference Include="Syncfusion.Blazor.Layouts" Version="23.1.36" />

@@ -4,7 +4,7 @@ using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Core.Util;
 using Clio.Demo.DataManager.Processor;
 using Microsoft.Extensions.DependencyInjection;
-using Clio.Demo.DataManagement.DataModel;
+using Clio.Demo.DataManagement.Processor.NW.DataModel;
 
 namespace WebAPIApp
 {
@@ -17,11 +17,11 @@ namespace WebAPIApp
 
         internal class DemoWebAPI : WebAPIAppMaster
         {
-            protected override void addAppImplementationServices(IServiceCollection services)
+            protected override void addCustomInjectables(IServiceCollection services)
             {
-                base.addAppImplementationServices(services);
+                base.addCustomInjectables(services);
 
-                services.AddTransient<ISQLClient, SQLClient>();
+                services.AddTransient<ISqlGateway, SqlAdoGateway>();
 
                 services.AddTransient<IOrderDataAccess    , OrderDataAccess    >();
                 services.AddTransient<ICustomerDataAccess , CustomerDataAccess >();

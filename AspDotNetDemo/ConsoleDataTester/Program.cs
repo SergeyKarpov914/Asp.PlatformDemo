@@ -2,7 +2,7 @@
 using Clio.Demo.ConsoleDataManagement.Service;
 using Clio.Demo.Core.Component.Master.App;
 using Clio.Demo.Core.Gateway;
-using Clio.Demo.DataManagement.DataModel;
+using Clio.Demo.DataManagement.Processor.NW.DataModel;
 using Clio.Demo.DataManager.Processor;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,7 +26,7 @@ namespace Clio.Demo.ConsoleDataManagement
 
             //services.AddApplicationInsightsTelemetry();     // if config contains "APPINSIGHTS_INSTRUMENTATIONKEY": "{instrumentation key}"
 
-            services.AddTransient<ISQLClient, SQLClient>();
+            services.AddTransient<ISqlGateway, SqlAdoGateway>();
 
             services.AddScoped<IOrderDataAccess    , OrderDataAccess>();
             services.AddScoped<ICustomerDataAccess , CustomerDataAccess>();

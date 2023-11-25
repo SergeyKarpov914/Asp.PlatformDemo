@@ -52,7 +52,9 @@ namespace Clio.Demo.Core.Component.Master.App
 
             #endregion
 
+            builder.Services.AddSignalR();
             builder.Services.AddControllers();
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddCors(options =>
             {
@@ -62,7 +64,9 @@ namespace Clio.Demo.Core.Component.Master.App
             });
             builder.Services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
-            addAppImplementationServices(builder.Services);
+            /////////////////////////////////////////////////////////////////////////
+            addCustomInjectables(builder.Services);
+            /////////////////////////////////////////////////////////////////////////
 
             WebApplication app = builder.Build();
 
@@ -71,6 +75,10 @@ namespace Clio.Demo.Core.Component.Master.App
             app.UseAuthorization();
             app.MapControllers();
 
+            /////////////////////////////////////////////////////////////////////////
+            addSignalRHub(app);
+            /////////////////////////////////////////////////////////////////////////
+            
             LogUtil.RuntimeInfo(this, $"WebApiApp server start", args, assemblies());
 
             Asp.ProcessConfiguration(this, args);
@@ -81,10 +89,14 @@ namespace Clio.Demo.Core.Component.Master.App
             app.Run();
         }
 
-        protected virtual void addAppImplementationServices(IServiceCollection services)
+        protected virtual void addCustomInjectables(IServiceCollection services)
         {
             _services = services;
         }
+        protected virtual void addSignalRHub(WebApplication app)
+        {
+        }
+
         protected abstract Type[] assemblies();
     }
 }

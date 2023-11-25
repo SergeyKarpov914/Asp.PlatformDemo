@@ -10,13 +10,13 @@
 
   <ItemGroup>
     <Compile Remove="Operation\**" />
-    <Compile Remove="Processor\Data\**" />
+    <Compile Remove="Processor.NW\Data\**" />
     <Compile Remove="ViewModel\**" />
     <EmbeddedResource Remove="Operation\**" />
-    <EmbeddedResource Remove="Processor\Data\**" />
+    <EmbeddedResource Remove="Processor.NW\Data\**" />
     <EmbeddedResource Remove="ViewModel\**" />
     <None Remove="Operation\**" />
-    <None Remove="Processor\Data\**" />
+    <None Remove="Processor.NW\Data\**" />
     <None Remove="ViewModel\**" />
   </ItemGroup>
 

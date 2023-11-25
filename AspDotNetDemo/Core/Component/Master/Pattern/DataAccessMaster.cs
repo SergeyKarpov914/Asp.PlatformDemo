@@ -44,7 +44,7 @@ namespace Clio.Demo.Core.Component.Master.Pattern
 
         #region c-tor
 
-        protected readonly ISQLClient _sqlClient;
+        protected readonly ISqlGateway _sqlClient;
         protected readonly IConfiguration _configuration;
 
         private readonly string _connection;
@@ -57,7 +57,7 @@ namespace Clio.Demo.Core.Component.Master.Pattern
         private IEnumerable<string> ColumnsInsert => _columnsInsert ?? (_columnsInsert = _sqlClient.Columns(_table, _connection, ColumnSet.Insert));
 
 
-        public DataAccessMaster(ISQLClient sqlClient, IConfiguration configuration)
+        public DataAccessMaster(ISqlGateway sqlClient, IConfiguration configuration)
         {
             sqlClient.Inject(out _sqlClient);
             configuration.Inject(out _configuration);

@@ -1,8 +1,9 @@
-﻿using System.Text.Json.Serialization;
+﻿using Clio.Demo.Abstraction.Interface;
+using System.Text.Json.Serialization;
 
 namespace Clio.Demo.Core.Component.Master.Pattern
 {
-    public class EntityMaster
+    public class EntityMaster : IEntity
     {
         [JsonIgnore] public int    Id     { get; set; }
         [JsonIgnore] public string Code   { get; set; }
