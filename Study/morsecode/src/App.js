@@ -6,95 +6,99 @@ import './App.css';
 
 function App() {
 
-  const [morseMessage, Message] = useState("");
-  const [downAction, setDownMessage] = useState("->");
-  const [upAction, setUpMessage] = useState("<-");
+  const [morseMessage, Message] = useState("                 ->       ");
 
   const [downTime, setDownTime] = useState(0);
-  const [upTime, setUpTime] = useState(0);
-  const [holdTime, setHoldTime] = useState(0);
+  const [endTime, setEndTime] = useState(0);
 
+  const [letter, morseLetter] = useState("");
+  const [count, increment] = useState(0);
 
-  function setTime(what) {
-    let time = new Date().getTime() - 1701380000000;
-    console.log("   -> "+what+ " " + time);
-    return time;
-  }
-
-  const playAudio = () => {
-    let path = require("./dash.mp3").default;
-    const audio = new Audio(path);
-    
-    console.log("playing beep");
-
-    audio.play();
-
-//    const audioPromise = audio.play();
-//    if (audioPromise !== undefined) {
-//        audioPromise
-//            .then(() => {
-//                console.log("works");
-//            })
-//            .catch((err) => {
-//                console.info(err);
-//            });
-//    }
-  }
+  /////////////////////////////////////////////////////////////////////////////////////
 
   function handleDown() {
-    console.info("------------------"+convert("...")+convert("---")+convert("...")+"---------------------------");
-  
-    setDownMessage(downAction + " down");
+//  console.info("---------------------------------------------");
 
-    let dir = "Down";
-    setDownTime(setTime(dir));
+    setDownTime(setTime("Down"));
 
 //  console.info("Mouse down:" + downTime);
   }  
+
   function handleUp() {
-    setUpMessage(upAction + " up");
-    
-//   console.log("Mouse up: "+ upTime);
-  
+    //   console.log("Mouse up: "+ upTime);
     playAudio();
 
     let up = setTime("Up");
     
     let holdTime = up - downTime;
-    let char = convert(morseChar(holdTime));
+    let gapTime = up - endTime;
 
-    Message(morseMessage + char);
+    setEndTime(up);
 
-    console.log("Mouse up: "+ char + "  " + morseMessage) ;
+//  console.log("Hold: "+ holdTime + "   " + "Gap: " + gapTime) ;
+
+    let element = morseElement(holdTime);
+
+    if(gapTime > 500 || count >= 4){                // letter is complete    
+      let char = convert(letter);
+      Message(morseMessage + " " + char);
+
+      console.log(up + " " + endTime + "  " + holdTime + " " + gapTime + "  ("+ letter + " > " + char + ")   " + morseMessage);
+
+      morseLetter(element);               // start letter with first dot or dash   
+      increment(1);      
+    }            
+    if(gapTime < 300){                // add next dot or dash to letter
+      morseLetter(letter + element); 
+      increment(count + 1);      
+
+      console.log(count + "  " + gapTime);
+    }   
   } 
   
-  function morseChar(hold)
-  {
-     if(hold < 120){
-        return '.';
-     }   
-     if(hold > 200){
-        return '-';
-     }   
+  /////////////////////////////////////////////////////////////////////////////////////
+
+  function morseElement(hold){
+     if(hold < 120){ return '.'; }   
+     if(hold > 200){ return '-'; }   
      return '';
   }
-   
+
+  function setTime(what) {
+    let time = new Date().getTime() - 1701380000000;
+//  console.log("   -> "+what+ " " + time);
+    return time;
+  }
+
+  const playAudio = (segment) => {
+    let path = "";
+    
+    if(segment === '.'){ path = require("./dot.mp3").default; }
+    if(segment === '-'){ path = require("./dash.mp3").default; }
+
+  //  const audio = new Audio(path);
+  //  console.log("playing " + path);
+
+  //  audio.play();
+  }
+
+  /////////////////////////////////////////////////////////////////////////////////////////
+  
   return (
     <div className="App">
       <label>
         Write your post:
         <br/><br/><br/>
-        <textarea name="postContent" rows={20} cols={60}>{morseMessage}</textarea>
       </label> 
       <br /><br /><br /><br />
         <Text numberOfLines={5}  >{morseMessage}</Text>
       <br/><br/><br/>
       <button onMouseDown={() => handleDown()} onMouseUp={() => handleUp()}>Morse Key</button>
+      <br/><br/><br/>
+      <button onClick={() => Message("                 ->")}>Reset</button>
       <br />
     </div>
   );
-
-
 }
 
 
