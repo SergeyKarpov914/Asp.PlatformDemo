@@ -1,6 +1,7 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Component.Master.Pattern;
-using Clio.Demo.Data.Northwind;
+using Clio.Demo.Abstraction.Interface;
+using Clio.Demo.Core;
+using Clio.Demo.Domain.Data.Northwind;
 using Microsoft.Extensions.Configuration;
 
 namespace Clio.Demo.DataManagement.Processor.NW.DataModel

@@ -1,4 +1,4 @@
-﻿using Clio.Demo.Data.Northwind;
+﻿using Clio.Demo.Domain.Data.Northwind;
 using Clio.Demo.DataPresentation.Elements;
 using Clio.Demo.DataPresentation.Gateway;
 using Clio.Demo.Extension;

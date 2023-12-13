@@ -1,7 +1,7 @@
 ﻿using Clio.Demo.Core.Component.Master.Pattern;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Clio.Demo.Domain.Data.Entity
+namespace Clio.Demo.Domain.Data.Hbc
 {
     [Table("[Hbc].[dbo].[Customer]")]
     public sealed class Customer : EntityMaster

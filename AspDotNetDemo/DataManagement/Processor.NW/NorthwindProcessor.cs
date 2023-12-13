@@ -1,9 +1,10 @@
 ﻿using Clio.Demo.Core.Component.Master.Pattern;
-using Clio.Demo.Data.Northwind;
+using Clio.Demo.Domain.Data.Northwind;
 using Clio.Demo.DataManagement.Processor.NW.DataModel;
 using Clio.Demo.Extension;
 using Clio.Demo.Util.Telemetry.Seri;
 using OrderService.Data;
+using Clio.Demo.Core.Extension;
 
 namespace Clio.Demo.DataManager.Processor
 {
@@ -43,7 +44,7 @@ namespace Clio.Demo.DataManager.Processor
             Customer customer = null;
             try
             {
-                customer = await _customerData.Read(DataKey<int>.Id(id, "[CustomerID]"));
+                customer = (await _customerData.Read($"[CustomerID]={id}")).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -57,7 +58,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Customer> customers = null;
             try
             {
-                customers = await _customerData.ReadAll(DataMultiKey<int>.Id(ids, "[CustomerID]"));
+                customers = await _customerData.Read($"[CustomerID] IN {ids.ToInClause<int>()}");
             }
             catch (Exception ex)
             {
@@ -71,7 +72,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Product> products = null;
             try
             {
-                products = await _productData.ReadAll(DataMultiKey<int>.Id(ids, "[CustomerID]"));
+                products = await _productData.Read($"[ProductID] IN {ids.ToInClause<int>()}");
             }
             catch (Exception ex)
             {
@@ -85,7 +86,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Employee> employees = null;
             try
             {
-                employees = await _employeeData.ReadAll(DataMultiKey<int>.Id(ids, "[CustomerID]"));
+                employees = await _employeeData.Read($"[EmployeeID] IN {ids.ToInClause<int>()}");
             }
             catch (Exception ex)
             {
@@ -99,16 +100,16 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Order> orders = null;
             try
             {
-                orders = await _orderData.ReadAll(DataMultiKey<int>.Id(ids, "[CustomerID]"));
+                orders = await _orderData.Read($"[OrderID] IN {ids.ToInClause<int>()}");
 
 				/////////////////////////////////////////////////////////////////////////////
                 // makeshift code, cache is to be used instead
                 //
-                IEnumerable<Employee> employees = await _employeeData.ReadAll();
-				IEnumerable<Customer> customers = await _customerData.ReadAll();
-				IEnumerable<Deal>     deals     = await _dealData    .ReadAll();
-				IEnumerable<Product>  products  = await _productData .ReadAll();
-                IEnumerable<Supplier> suppliers = await _supplierData.ReadAll();
+                IEnumerable<Employee> employees = await _employeeData.Read();
+				IEnumerable<Customer> customers = await _customerData.Read();
+				IEnumerable<Deal>     deals     = await _dealData    .Read();
+				IEnumerable<Product>  products  = await _productData .Read();
+                IEnumerable<Supplier> suppliers = await _supplierData.Read();
 
                 foreach (Product product in products)
                 {
@@ -139,7 +140,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Supplier> suppliers = null;
             try
             {
-                suppliers = await _supplierData.ReadAll(DataMultiKey<int>.Id(ids, "[CustomerID]"));
+                suppliers = await _supplierData.Read($"[SupplierID] IN {ids.ToInClause<int>()}");
             }
             catch (Exception ex)
             {
@@ -153,7 +154,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Territory> territories = null;
             try
             {
-                territories = await _territoryData.ReadAll(DataMultiKey<int>.Id(ids, "[CustomerID]"));
+                territories = await _territoryData.Read($"[TerritoryID] IN {ids.ToInClause<int>()}");
             }
             catch (Exception ex)
             {

@@ -2310,7 +2310,8 @@
           "Serilog.Settings.Configuration": "7.0.0",
           "Serilog.Sinks.ApplicationInsights": "4.0.0",
           "Serilog.Sinks.Console": "4.1.0",
-          "Serilog.Sinks.File": "5.0.0"
+          "Serilog.Sinks.File": "5.0.0",
+          "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
           "bin/placeholder/Demo.Core.dll": {}

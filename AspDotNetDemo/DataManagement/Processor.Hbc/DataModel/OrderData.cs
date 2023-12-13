@@ -1,6 +1,6 @@
 ﻿using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Core;
-using Clio.Demo.Domain.Data.Entity;
+using Clio.Demo.Domain.Data.Hbc;
 using Microsoft.Extensions.Configuration;
 
 namespace Clio.Demo.Domain.Data.Processor.DataModel

@@ -1,5 +1,6 @@
 ﻿using Clio.Demo.Abstraction.Data;
 using Clio.Demo.Abstraction.Interface;
+using Clio.Demo.Core.Extension;
 using Clio.Demo.Extension;
 using Clio.Demo.Util;
 using Clio.Demo.Util.Telemetry.Seri;
@@ -87,7 +88,7 @@ namespace Clio.Demo.Core.Gateway
             return result;
         }
 
-        public int ExecProc<T>(T entity, string proc, string connectionString, IEnumerable<string> columns) where T : class, IEntity
+        public async Task<int> ExecProc<T>(T entity, string proc, string connectionString) where T : class, IEntity
         {
             int identity = -1;
             try
@@ -96,7 +97,7 @@ namespace Clio.Demo.Core.Gateway
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand(Sql.ExecuteProc(entity, columns, proc), connection))
+                    using (SqlCommand command = new SqlCommand(proc, connection))
                     {
                         identity = (int)(decimal)command.ExecuteScalar();
                     }
@@ -110,11 +111,11 @@ namespace Clio.Demo.Core.Gateway
             return identity;
         }
 
-        public async Task Update<T>(T entity, string table, string connectionString, IEnumerable<string> columns) where T : class, IEntity
+        public async Task Update<T>(T entity, string connectionString) where T : class, IEntity
         {
             try
             {
-                await Execute(Sql.UpdateQuery(entity, columns, table), connectionString);
+                await Execute(entity.UpdateQuery(), connectionString);
             }
             catch (Exception ex)
             {
@@ -123,125 +124,38 @@ namespace Clio.Demo.Core.Gateway
             }
         }
 
-        public void Insert<T>(T entity, string table, string connectionString, IEnumerable<string> columns) where T : class, IEntity
+        public async Task Insert<T>(T entity, string connectionString) where T : class, IEntity
         {
             try
             {
-                insertRow(connectionString, Sql.InsertQuery(entity, columns, table));
-            }
-            catch (Exception ex)
-            {
-                Log.Error(this, ex);
-                throw;
-            }
-        }
-
-        public void Insert(string connectionString, string insertQuery)
-        {
-            try
-            {
-                insertRow(connectionString, insertQuery);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(this, ex);
-                throw;
-            }
-        }
-
-        public async Task Delete<T>(T entity, string table, string connectionString) where T : class, IEntity
-        {
-            try
-            {
-                string clause = $"Id = {entity.Id}";
-
-                await Execute(Sql.DeleteQuery(table, clause), connectionString);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(this, ex);
-                throw;
-            }
-        }
-
-        public async Task Delete(Key key, string table, string connectionString)
-        {
-            try
-            {
-                string clause = $"{key.Column} = {key.SqlValue}";
-
-                await Execute(Sql.DeleteQuery(table, clause), connectionString);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(this, ex);
-                throw;
-            }
-        }
-
-        private void insertRow(string connectionString, string insertQuery)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
+                    connection.Open();
 
-        public IEnumerable<string> Columns(string table, string connectionString, ColumnSet columnSet = ColumnSet.All)
-        {
-            IEnumerable<string> columns = null;
-            try
-            {
-                columns = tableColumns(table, connectionString, columnSet);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(this, ex);
-                throw;
-            }
-            return columns;
-        }
-
-        private IEnumerable<string> tableColumns(string table, string connectionString, ColumnSet columnSet = ColumnSet.All)
-        {
-            List<string> columns = new List<string>();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlDataAdapter adapter = new SqlDataAdapter($"SELECT * FROM {table} WHERE 1 = 0", connection))
-                {
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-
-                    foreach (DataColumn column in dataTable.Columns)
+                    using (SqlCommand command = new SqlCommand(entity.InsertQuery(), connection))
                     {
-                        if (excludeColumn(column, columnSet))
-                        {
-                            continue;
-                        }
-                        columns.Add(column.ColumnName);
+                        command.ExecuteNonQuery();
                     }
                 }
             }
-            return columns;
+            catch (Exception ex)
+            {
+                Log.Error(this, ex);
+                throw;
+            }
         }
 
-        private bool excludeColumn(DataColumn column, ColumnSet columnSet)
+        public async Task Delete<T>(T entity, string connectionString) where T : class, IEntity
         {
-            switch (columnSet)
+            try
             {
-                case ColumnSet.All:
-                    return false;
-                case ColumnSet.Insert:
-                    return column.ColumnName.Equals("id", StringComparison.OrdinalIgnoreCase); //if (column.ReadOnly || column.AutoIncrement)
+                await Execute(entity.DeleteQuery(), connectionString);
             }
-            return false;
+            catch (Exception ex)
+            {
+                Log.Error(this, ex);
+                throw;
+            }
         }
     }
 }

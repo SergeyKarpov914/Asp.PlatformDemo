@@ -1,5 +1,6 @@
-﻿using Clio.Demo.Core.Component.Master.Pattern;
+﻿using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Abstraction.Interface;
+using Clio.Demo.Core;
 using Microsoft.Extensions.Configuration;
 using OrderService.Data;
 

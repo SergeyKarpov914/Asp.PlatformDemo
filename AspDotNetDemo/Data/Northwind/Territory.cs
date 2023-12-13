@@ -1,31 +1,18 @@
-﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Data.Northwind;
+﻿using Clio.Demo.Core.Component.Master.Pattern;
+using Clio.Demo.Domain.Data.Northwind;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace OrderService.Data
 {
-    public class Territory : IEntity
-	{
-		public int    EmployeeID            { get; set; }
-		public string TerritoryID			{ get; set; }
-		public string TerritoryDescription	{ get; set; }
-		public string RegionDescription	    { get; set; }
+    [Table("[Northwind].[dbo].[Territories]")]
+    public class Territory : EntityMaster
+    {
+        [Column("EmployeeID")]           public int    EmployeeID           { get; set; }
+        [Column("TerritoryID")]          public string TerritoryID			{ get; set; }
+        [Column("TerritoryDescription")] public string TerritoryDescription	{ get; set; }
+        [Column("RegionDescription")]    public string RegionDescription	{ get; set; }
 
-        [JsonIgnore]
-        public Employee Employee { get; set; }
-
-        [JsonIgnore]
-        public int Id { get; set; }
-        [JsonIgnore]
-        public string Code => TerritoryID;
-        [JsonIgnore]
-        public string Lookup => TerritoryID;
-        [JsonIgnore]
-        public string Name { get; set; }
-
-        [JsonIgnore]
-        public DateTime Created { get; set; }
-        [JsonIgnore]
-        public DateTime Updated { get; set; }
+        [JsonIgnore]  public Employee Employee { get; set; }
     }
 }

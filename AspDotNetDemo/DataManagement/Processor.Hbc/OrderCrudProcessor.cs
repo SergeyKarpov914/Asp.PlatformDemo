@@ -1,4 +1,4 @@
-﻿using Clio.Demo.Domain.Data.Entity;
+﻿using Clio.Demo.Domain.Data.Hbc;
 using Clio.Demo.Domain.Data.Processor.DataModel;
 using Clio.Demo.Extension;
 using Clio.Demo.Util.Telemetry.NLog;

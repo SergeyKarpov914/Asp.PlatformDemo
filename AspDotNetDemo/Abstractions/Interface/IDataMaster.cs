@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Clio.Demo.Abstraction.Interface.Mk2
+namespace Clio.Demo.Abstraction.Interface
 {
     public interface IDataAccess<T> where T : class, IEntity
     {

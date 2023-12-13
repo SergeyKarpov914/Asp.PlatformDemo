@@ -1,4 +1,4 @@
-﻿using Clio.Demo.Data.Northwind;
+﻿using Clio.Demo.Domain.Data.Northwind;
 using Clio.Demo.Extension;
 
 namespace Clio.Demo.DataPresentation.Elements

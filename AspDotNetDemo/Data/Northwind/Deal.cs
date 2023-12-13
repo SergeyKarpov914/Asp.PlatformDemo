@@ -1,31 +1,18 @@
-﻿using Clio.Demo.Abstraction.Interface;
+﻿using Clio.Demo.Core.Component.Master.Pattern;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace Clio.Demo.Data.Northwind
+namespace Clio.Demo.Domain.Data.Northwind
 {
-	public class Deal : IEntity
+    [Table("[Northwind].[dbo].[Deal]")]
+    public class Deal : EntityMaster
 	{
-		public int     OrderID   { get; set; }
-		public int     ProductID { get; set; }
+        [Column("OrderID")]   public int     OrderID   { get; set; }
+        [Column("ProductID")] public int     ProductID { get; set; }
+        [Column("Quantity")]  public int     Quantity  { get; set; }
+        [Column("UnitPrice")] public decimal UnitPrice { get; set; }
+        [Column("Discount")]  public decimal Discount  { get; set; }
 
-		public int     Quantity  { get; set; }
-		public decimal UnitPrice { get; set; }
-		public decimal Discount  { get; set; }
-
-		public Product Product { get; set; }
-
-		[JsonIgnore]
-		public int    Id     => throw new NotImplementedException();
-		[JsonIgnore]
-		public string Code   => throw new NotImplementedException();
-		[JsonIgnore]
-		public string Name   => Product.ProductName;
-		[JsonIgnore]
-		public string Lookup => throw new NotImplementedException();
-
-		[JsonIgnore]
-		public DateTime Created { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-		[JsonIgnore]
-		public DateTime Updated { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        [JsonIgnore] public Product Product { get; set; }
 	}
 }

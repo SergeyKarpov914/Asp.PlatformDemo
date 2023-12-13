@@ -14,16 +14,14 @@ namespace Clio.Demo.BlazerServerAppDemo
         }
     }
 
-    public class BlazorDataServer : WebBlazorAppHost
+    public class BlazorDataServer : WebBlazorAppMaster
     {
-        protected override void addAppServices(IServiceCollection services)
+        protected override void addCustomInjectables()
         {
-            _services = services;                        // capture a reference to container for inspection
+            _services.AddSingleton<NorthwindGateway>();   // gateway to WebAPI server, injected into ViewModel
+            _services.AddSingleton<NorthwindViewModel>(); // ViewModel is to be available for injection into razor components
             
-            services.AddSingleton<NorthwindGateway>();   // gateway to WebAPI server, injected into ViewModel
-            services.AddSingleton<NorthwindViewModel>(); // ViewModel is to be available for injection into razor components
-            
-            services.AddSyncfusionBlazor();
+            _services.AddSyncfusionBlazor();
             // In non-demo solutions, the key is to be stored with other secrets
             SyncfusionLicenseProvider.RegisterLicense(getLocal("key"));
         }

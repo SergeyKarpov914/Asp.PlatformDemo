@@ -1,47 +1,28 @@
-﻿using Clio.Demo.Abstraction.Interface;
-using System.Text.Json.Serialization;
+﻿using Clio.Demo.Core.Component.Master.Pattern;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Clio.Demo.Data.Northwind
+namespace Clio.Demo.Domain.Data.Northwind
 {
-    public class Employee : IEntity
+    [Table("[Northwind].[dbo].[Employees]")]
+    public class Employee : EntityMaster
     {
-        public int       EmployeeID      { get; set; }
-        public string    LastName        { get; set; }
-        public string    FirstName       { get; set; }
-        public string    Title           { get; set; }
-        public string    TitleOfCourtesy { get; set; }
-        public DateTime? BirthDate       { get; set; }
-        public DateTime? HireDate        { get; set; }
-        public string    Address         { get; set; }
-        public string    City            { get; set; }
-        public string    Region          { get; set; }
-        public string    PostalCode      { get; set; }
-        public string    Country         { get; set; }
-        public string    HomePhone       { get; set; }
-        public string    Extension       { get; set; }
-        public byte[]    Photo           { get; set; }
-        public string    Notes           { get; set; }
-        public int       ReportsTo       { get; set; }
-        public string    PhotoPath       { get; set; }
-
-        [JsonIgnore]
-        public int Id { get; set; }
-        [JsonIgnore]
-        public string Code => EmployeeID.ToString();
-        [JsonIgnore]
-        public string Lookup => EmployeeID.ToString();
-        [JsonIgnore]
-        public string Name { get; set; }
-
-
-        [JsonIgnore]
-        public DateTime Created { get; set; }
-        [JsonIgnore]
-        public DateTime Updated { get; set; }
-
-        public override string ToString()
-        {
-            return $"{EmployeeID} {FirstName} {LastName} {Title} {City}";
-        }
+        [Column("EmployeeID")]      public int       EmployeeID      { get; set; }
+        [Column("LastName")]        public string    LastName        { get; set; }
+        [Column("FirstName")]       public string    FirstName       { get; set; }
+        [Column("Title")]           public string    Title           { get; set; }
+        [Column("TitleOfCourtesy")] public string    TitleOfCourtesy { get; set; }
+        [Column("BirthDate")]       public DateTime? BirthDate       { get; set; }
+        [Column("HireDate")]        public DateTime? HireDate        { get; set; }
+        [Column("Address")]         public string    Address         { get; set; }
+        [Column("City")]            public string    City            { get; set; }
+        [Column("Region")]          public string    Region          { get; set; }
+        [Column("PostalCode")]      public string    PostalCode      { get; set; }
+        [Column("Country")]         public string    Country         { get; set; }
+        [Column("HomePhone")]       public string    HomePhone       { get; set; }
+        [Column("Extension")]       public string    Extension       { get; set; }
+        [Column("Photo")]           public byte[]    Photo           { get; set; }
+        [Column("Notes")]           public string    Notes           { get; set; }
+        [Column("ReportsTo")]       public int       ReportsTo       { get; set; }
+        [Column("PhotoPath")]       public string    PhotoPath       { get; set; }
     }
 }

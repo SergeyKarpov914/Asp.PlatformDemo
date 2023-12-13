@@ -12,5 +12,10 @@ namespace Clio.Demo.Core.Component.Master.Pattern
 
         [JsonIgnore] public DateTime Created { get; set; }
         [JsonIgnore] public DateTime Updated { get; set; }
+
+        public override string ToString()
+        {
+            return $"{GetType().Name} ({Id}) {Name}";
+        }
     }
 }

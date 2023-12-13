@@ -1,40 +1,22 @@
-﻿using Clio.Demo.Abstraction.Interface;
-using System.Text.Json.Serialization;
+﻿using Clio.Demo.Core.Component.Master.Pattern;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Clio.Demo.Data.Northwind
+namespace Clio.Demo.Domain.Data.Northwind
 {
-    public class Supplier : IEntity
+    [Table("[Northwind].[dbo].[Suppliers]")]
+    public class Supplier : EntityMaster
     {
-        public int    SupplierID   { get; set; }
-        public string CompanyName  { get; set; }
-        public string ContactName  { get; set; }
-        public string ContactTitle { get; set; }
-        public string Address      { get; set; }
-        public string City         { get; set; }
-        public string Region       { get; set; }
-        public string PostalCode   { get; set; }
-        public string Country      { get; set; }
-        public string Phone        { get; set; }
-        public string Fax          { get; set; }
-        public string HomePage     { get; set; }
-
-        [JsonIgnore]
-        public int Id { get; set; }
-        [JsonIgnore]
-        public string Code => SupplierID.ToString();
-        [JsonIgnore]
-        public string Lookup => SupplierID.ToString();
-        [JsonIgnore]
-        public string Name { get; set; }
-
-        [JsonIgnore]
-        public DateTime Created { get; set; }
-        [JsonIgnore]
-        public DateTime Updated { get; set; }
-
-        public override string ToString()
-        {
-            return $"{SupplierID} {CompanyName}";
-        }
+        [Column("SupplierID")]   public int    SupplierID   { get; set; }
+        [Column("CompanyName")]  public string CompanyName  { get; set; }
+        [Column("ContactName")]  public string ContactName  { get; set; }
+        [Column("ContactTitle")] public string ContactTitle { get; set; }
+        [Column("Address")]      public string Address      { get; set; }
+        [Column("City")]         public string City         { get; set; }
+        [Column("Region")]       public string Region       { get; set; }
+        [Column("PostalCode")]   public string PostalCode   { get; set; }
+        [Column("Country")]      public string Country      { get; set; }
+        [Column("Phone")]        public string Phone        { get; set; }
+        [Column("Fax")]          public string Fax          { get; set; }
+        [Column("HomePage")]     public string HomePage     { get; set; }
     }
 }

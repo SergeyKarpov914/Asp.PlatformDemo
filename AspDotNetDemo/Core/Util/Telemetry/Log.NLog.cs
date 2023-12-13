@@ -27,5 +27,9 @@ namespace Clio.Demo.Util.Telemetry.NLog
         {
             _logger.Info(LogUtil.block(sender, messages, header));
         }
+        public static void BlockDbg(object sender, IEnumerable<string> messages, string header = null)
+        {
+            _logger.Debug(LogUtil.block(sender, messages, header));
+        }
     }
 }

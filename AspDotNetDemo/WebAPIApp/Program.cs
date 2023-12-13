@@ -1,10 +1,9 @@
-﻿using Clio.Demo.Core.Component.Master.App;
+﻿using Clio.Demo.Abstraction.Interface;
+using Clio.Demo.Core.Component.Master.App;
 using Clio.Demo.Core.Gateway;
-using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Util;
+using Clio.Demo.DataManagement.Processor.NW.DataModel;
 using Clio.Demo.DataManager.Processor;
 using Microsoft.Extensions.DependencyInjection;
-using Clio.Demo.DataManagement.Processor.NW.DataModel;
 
 namespace WebAPIApp
 {
@@ -17,21 +16,19 @@ namespace WebAPIApp
 
         internal class DemoWebAPI : WebAPIAppMaster
         {
-            protected override void addCustomInjectables(IServiceCollection services)
+            protected override void addCustomInjectables()
             {
-                base.addCustomInjectables(services);
+                _services.AddTransient<ISqlGateway, SqlAdoGateway>();
 
-                services.AddTransient<ISqlGateway, SqlAdoGateway>();
+                _services.AddTransient<IOrderDataAccess    , OrderDataAccess    >();
+                _services.AddTransient<ICustomerDataAccess , CustomerDataAccess >();
+                _services.AddTransient<IEmployeeDataAccess , EmployeeDataAccess >();
+                _services.AddTransient<IProductDataAccess  , ProductDataAccess  >();
+                _services.AddTransient<ISupplierDataAccess , SupplierDataAccess >();
+				_services.AddTransient<IDealDataAccess     , DealDataAccess>();
+				_services.AddTransient<ITerritoryDataAccess, TerritoryDataAccess>();
 
-                services.AddTransient<IOrderDataAccess    , OrderDataAccess    >();
-                services.AddTransient<ICustomerDataAccess , CustomerDataAccess >();
-                services.AddTransient<IEmployeeDataAccess , EmployeeDataAccess >();
-                services.AddTransient<IProductDataAccess  , ProductDataAccess  >();
-                services.AddTransient<ISupplierDataAccess , SupplierDataAccess >();
-				services.AddTransient<IDealDataAccess     , DealDataAccess>();
-				services.AddTransient<ITerritoryDataAccess, TerritoryDataAccess>();
-
-                services.AddTransient<NorthwindProcessor>();
+                _services.AddTransient<NorthwindProcessor>();
             }
 
             protected override Type[] assemblies()

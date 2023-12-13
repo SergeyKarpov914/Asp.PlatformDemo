@@ -62,24 +62,37 @@ namespace Clio.Demo.Core.Component.Gateway
             return result;
         }
 
-        void ISqlGateway.Insert<T>(T entity, string table, string connectionString, IEnumerable<string> columns)
+        public async Task Insert<T>(T entity, string connectionString) where T : class, IEntity
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
         }
 
-        public void Insert(string connectionString, string insertQuery)
+        public async Task Update<T>(T entity, string connectionString) where T : class, IEntity
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
         }
 
-        int ISqlGateway.ExecProc<T>(T entity, string proc, string connectionString, IEnumerable<string> columns)
+        public async Task Delete<T>(T entity, string connectionString) where T : class, IEntity
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
         }
 
-        public IEnumerable<string> Columns(string table, string connectionString, ColumnSet columnSet = ColumnSet.All)
+        public async Task<int> ExecProc<T>(T entity, string proc, string connectionString) where T : class, IEntity
         {
-            throw new NotImplementedException();
+            int identity = -1;
+            try
+            {
+                using (IDbConnection connection = new SqlConnection(connectionString))
+                {
+                    identity = await connection.ExecuteScalarAsync<int>(proc);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(this, ex);
+                throw;
+            }
+            return identity;
         }
     }
 }

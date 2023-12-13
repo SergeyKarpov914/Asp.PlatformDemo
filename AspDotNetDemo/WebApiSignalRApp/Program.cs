@@ -1,74 +1,42 @@
 using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Core.Component.Gateway;
-using Clio.Demo.Core.Util;
+using Clio.Demo.Core.Component.Master.App;
+using Clio.Demo.Core.Component.Master.Asp;
 using Clio.Demo.Domain.Data.Processor;
 using Clio.Demo.Domain.Data.Processor.DataModel;
-using Clio.Demo.Util.Telemetry.NLog;
-using System.Net;
 
 namespace Clio.Demo.OrderCrudServer
 {
     public class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+            new DemoWebAPI(Protocol.HttpSignalR).Run(args);
+        }
 
-            #region set webhost
+        internal class DemoWebAPI : WebAPIAppMaster
+        {
+            public DemoWebAPI(Protocol protocol) : base(protocol) { }
 
-            int port = builder.Configuration.GetValue<int>("port");
-            string urls = $"https://localhost:{port};https://*:{port + 1}";
-
-            builder.WebHost.UseUrls(urls);
-
-            #endregion set webhost
-
-            builder.Services.AddSignalR();
-
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
-
-            builder.Services.AddLogging();
-            builder.Logging.AddJsonConsole();
-
-            builder.Services.AddSwaggerGen();
-
-            #region Add custom injectables
-
-            builder.Services.AddTransient<ISqlGateway, SqlDapperGateway>();
-
-            builder.Services.AddTransient<IOrderData,    OrderData>();
-            builder.Services.AddTransient<ICustomerData, CustomerData>();
-            builder.Services.AddTransient<IEmployeeData, EmployeeData>();
-            builder.Services.AddTransient<IProductData,  ProductData>();
-
-            builder.Services.AddTransient<OrderCrudProcessor>();
-
-            #endregion Add custom injectables
-
-            WebApplication app = builder.Build();
-
-            if (app.Environment.IsDevelopment())
+            protected override void addCustomInjectables()
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-                app.UseCors(x => x.AllowAnyMethod()
-                                  .AllowAnyHeader()
-                                  .SetIsOriginAllowed(origin => true) 
-                                  .AllowCredentials()); 
+                _services.AddTransient<ISqlGateway, SqlDapperGateway>();
+
+                _services.AddTransient<IOrderData, OrderData>();
+                _services.AddTransient<ICustomerData, CustomerData>();
+                _services.AddTransient<IEmployeeData, EmployeeData>();
+                _services.AddTransient<IProductData, ProductData>();
+
+                _services.AddTransient<OrderCrudProcessor>();
             }
 
-            app.UseHttpsRedirection();
-            app.UseAuthorization();
-            app.MapControllers();
-
-            app.MapHub<OrderCrudHub>("/hub");
-
-            LogUtil.RuntimeInfo(app.GetType(), "Starting", args, new[] { typeof(IEntity), typeof(SqlDapperGateway) });
-
-            Log.Block(app.GetType(), new[] { $"API Server is listening on {urls.Replace("*", Dns.GetHostEntry(Dns.GetHostName()).HostName)}" }, "WebAPI Hosting start");
-
-            app.Run();
+            protected override Type[] assemblies()
+            {
+                return new Type[]
+                {
+                    typeof(WebAPIAppMaster),
+                };
+            }
         }
     }
 }
