@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clio.Demo.BlazerServerAppDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiSignalRApp", "WebApiSignalRApp\WebApiSignalRApp.csproj", "{381E40F9-B229-4668-B0FB-BD4C68763F73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableInsertGen", "TableInsertGen\TableInsertGen.csproj", "{8AD07D17-F113-49D9-8650-54B702B97F75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{381E40F9-B229-4668-B0FB-BD4C68763F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{381E40F9-B229-4668-B0FB-BD4C68763F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{381E40F9-B229-4668-B0FB-BD4C68763F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD07D17-F113-49D9-8650-54B702B97F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD07D17-F113-49D9-8650-54B702B97F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD07D17-F113-49D9-8650-54B702B97F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD07D17-F113-49D9-8650-54B702B97F75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +106,7 @@ Global
 		{80B2B48F-0F87-4ED0-A06B-F5B87A727881} = {FD449651-F065-4587-927D-2ADBF1599003}
 		{0E99A096-B1C2-4F58-9C5F-A4CB9FEFEEBC} = {C4A90B14-6915-4995-8C4D-3AA0E3107397}
 		{381E40F9-B229-4668-B0FB-BD4C68763F73} = {6E078F95-D408-438D-A0B9-49CC9EB71202}
+		{8AD07D17-F113-49D9-8650-54B702B97F75} = {C4A90B14-6915-4995-8C4D-3AA0E3107397}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A8D45274-16AF-4388-8E19-0CD79973A0F7}

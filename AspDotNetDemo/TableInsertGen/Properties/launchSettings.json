@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TableInsertGen": {
+      "commandName": "Project",
+      "commandLineArgs": "./accounts"
+    }
+  }
+}
