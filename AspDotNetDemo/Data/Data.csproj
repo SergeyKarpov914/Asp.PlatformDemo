@@ -9,14 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="EqDeriv\Sql\Create-EqDeriv-Db.sql" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="EqDeriv\Sql\Create-EqDeriv-Db.sql" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 

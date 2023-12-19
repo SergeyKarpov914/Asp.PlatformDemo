@@ -6,7 +6,7 @@ go
 if exists (select * from sysobjects where id = object_id('dbo.Account') and sysstat & 0xf = 3)
 	drop table "dbo"."Account"
 GO
-if exists (select * from sysobjects where id = object_id('dbo.Position') and sysstat & 0xf = 3)
+if exists (select * from sysobjects where id = object_id('dbo.OpenPosition') and sysstat & 0xf = 3)
 	drop table "dbo"."OpenPosition"
 GO
 if exists (select * from sysobjects where id = object_id('dbo.PositionRisk') and sysstat & 0xf = 3)
@@ -29,7 +29,7 @@ CREATE TABLE [dbo].[PositionRisk](
 	[DOLLARGAMMA] [float] NULL,
 	[DOLLARVEGA] [float] NULL,
 	[DOLLARTHETA] [float] NULL,
-	[DOLLARRHO] [float] NULL-,
+	[DOLLARRHO] [float] NULL,
 	[SHAREDELTA] [float] NULL,
 	[SHAREGAMMA] [float] NULL
 ) ON [PRIMARY]
@@ -55,7 +55,7 @@ CREATE TABLE [dbo].[TradeBlotter](
 	[STRIKE] [Float] NULL,
 	[PUTCALL] [varchar](49) NULL,
 	[PRICE] [float] NULL,
-	[0TC] [bit] NULL DEFAULT ((0))
+	[OTC] [bit] NULL DEFAULT ((0))
 ) ON [PRIMARY]
 GO
 

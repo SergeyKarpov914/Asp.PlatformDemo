@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Clio.Demo.Core.Component.Master.Pattern;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Clio.Demo.Data.EqDeriv
+namespace Clio.Demo.Domain.Data.EqDeriv
 {
-    internal class Account
+    [Table("[EqDeriv].[dbo].[Account]")]
+    public sealed class Account : EntityMaster
     {
+        [Column("MASTERCODE")]   public string MasterCode  {get;set;}
+        [Column("DESKCODE")]     public string DeskCode    {get;set;}
+        [Column("ACCOUNTNAME")]  public string AccountName {get;set;}
+        [Column("STATUS")]       public string Status      {get;set;}
+        [Column("LASTUPDATED")]  public string LastUpdated {get;set;}
     }
 }

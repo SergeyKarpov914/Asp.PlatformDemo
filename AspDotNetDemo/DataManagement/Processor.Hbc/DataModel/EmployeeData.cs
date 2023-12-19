@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Clio.Demo.Domain.Data.Processor.DataModel
 {
-    public interface IEmployeeData : Abstraction.Interface.Mk2.IDataAccess<Employee>
+    public interface IEmployeeData : IDataAccess<Employee>
     {
     }
 

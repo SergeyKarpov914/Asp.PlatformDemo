@@ -166,9 +166,9 @@ namespace Clio.Demo.Core.Component.Master.Asp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
-            app.MapFallbackToPage("/_Host");
-
             app.MapBlazorHub();
+
+            app.MapFallbackToPage("/_Host");
 
             return app;
         }

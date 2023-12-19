@@ -4,6 +4,7 @@ using Clio.Demo.Core.Component.Master.Asp;
 using Clio.Demo.Core.Util;
 using Clio.Demo.Extension;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Clio.Demo.Core.Component.Master
 {
@@ -15,6 +16,9 @@ namespace Clio.Demo.Core.Component.Master
 
             addTelemetry(builder);
             addContainerComponents(builder);
+
+            builder.Services.AddRazorPages();
+            builder.Services.AddServerSideBlazor();
 
             /////////////////////////////////////////////////////////////////////////
             addCustomInjectables();

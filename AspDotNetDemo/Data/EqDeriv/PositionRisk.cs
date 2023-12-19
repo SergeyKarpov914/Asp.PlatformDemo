@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Clio.Demo.Core.Component.Master.Pattern;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Clio.Demo.Data.EqDeriv
+namespace Clio.Demo.Domain.Data.EqDeriv
 {
-    internal class PositionRisk
+    [Table("[EqDeriv].[dbo].[PositionRisk]")]
+    public sealed class PositionRisk : EntityMaster
     {
+        [Column("EODDATE")]     public int    EodDate     { get; set; }
+        [Column("UNDERLYING")]  public string Underlying  { get; set; }
+        [Column("DOLLARDELTA")] public double DollarDelta { get; set; }
+        [Column("DOLLARGAMMA")] public double DollarGamma { get; set; }
+        [Column("DOLLARVEGA")]  public double DollarVega  { get; set; }
+        [Column("DOLLARTHETA")] public double DollarTheta { get; set; }
+        [Column("DOLLARRHO")]   public double DollarRho   { get; set; }
+        [Column("SHAREDELTA")]  public double ShareDelta  { get; set; }
+        [Column("SHAREGAMMA")]  public double ShareGamma  { get; set; }
     }
 }

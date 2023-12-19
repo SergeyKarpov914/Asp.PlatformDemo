@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Clio.Demo.Core
 {
-    public class DataAccessMaster<T> : Abstraction.Interface.Mk2.IDataAccess<T> where T : class, IEntity, new()
+    public class DataAccessMaster<T> : IDataAccess<T> where T : class, IEntity, new()
     {
         #region c-tor
 

@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Clio.Demo.Domain.Data.Processor.DataModel
 {
-    public interface IProductData : Abstraction.Interface.Mk2.IDataAccess<Product>
+    public interface IProductData : IDataAccess<Product>
     {
     }
 
