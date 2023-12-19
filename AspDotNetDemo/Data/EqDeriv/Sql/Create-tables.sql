@@ -37,7 +37,7 @@ GO
 
 CREATE TABLE [dbo].[Account](
 	[MASTERCODE] [varchar](59) NULL,
-	[DESICODE] [varchar](29) NULL,
+	[DESKCODE] [varchar](29) NULL,
 	[ACCOUNTNAME] [nchar](56) NULL,
 	[STATUS] [nchar](1) NULL,
 	[LASTUPDATED] [datetime] NULL

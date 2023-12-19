@@ -76,7 +76,7 @@ namespace Clio.Demo.Util.Telemetry.Seri
             _fileLogger   ?.Information(message);
             _consoleLogger?.EventToConsole(LogEventLevel.Information, Core.Util.LogUtil.log(sender), name, eventTrack);
 
-            LogMaster.TelemetryClient?.TrackEvent(name, eventTrack);
+            //LogMaster.TelemetryClient?.TrackEvent(name, eventTrack);
         }
 
         public static void Warn(object sender, string message, params object[] args)
@@ -96,7 +96,7 @@ namespace Clio.Demo.Util.Telemetry.Seri
             _insightsLogger?.Error(message);
             _fileLogger    ?.Error(message);
 
-            LogMaster.TelemetryClient?.TrackException(ex);
+            //LogMaster.TelemetryClient?.TrackException(ex);
 
             steps?.Next(Core.Util.LogUtil.log(sender, $"ERROR: {ex.Short()}"));
         }

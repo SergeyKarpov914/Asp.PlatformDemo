@@ -18,31 +18,61 @@
 }
 else
 {
-     <div class="col-lg-12 control-section">
+    <div class="col-lg-12 control-section">
         <div class="content-wrapper">
             <div class="row">
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 <div class='e-statustext'>Clients</div>
                 <div>&nbsp;</div>
-                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
-                    Data="@accounts" TItem="Account" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" 
+                                AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                            SelectionMode="DataGridSelectionMode.Single" @bind-Value=@SelectedAccounts
+                            Data="@accounts" TItem="Account" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
                     <Columns>
                         <RadzenDataGridColumn TItem="Account"  Property="MasterCode"  Title="Code" Filterable="false" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
-                        <RadzenDataGridColumn TItem="Account"  Property="AccountName" Title="Name" Frozen="true" Width="160px" />
-                        <RadzenDataGridColumn TItem="Account"  Property="DeskCode"    Title="Desk" Width="160px"/>
+                        <RadzenDataGridColumn TItem="Account"  Property="AccountName" Title="Name" Frozen="true" Width="140px" />
+                    </Columns>
+                </RadzenDataGrid>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div class='e-statustext'>Open Positions</div>
+                <div>&nbsp;</div>
+                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" 
+                                AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                                Data="@positions" TItem="OpenPosition" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+                    <Columns>
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="MasterCode"   Title="Master Code"   Width="80px"  Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="TradeDate"    Title="Trade Date"    Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="Symbol"       Title="Symbol"       Width="80px"  Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="Quantity"     Title="Quantity"     Width="80px"  Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="Expiration"   Title="Expiration"   Width="80px"  Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="Strike"       Title="Strike"       Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="PupCall"      Title="Pup/Call"      Width="80px"  Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="Price"        Title="Price"        Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="CurrentPrice" Title="Current Price" Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="OpenPosition" Property="Delta"        Title="Delta"        Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
                     </Columns>
                 </RadzenDataGrid>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 <div class='e-statustext'>Trade Blotter</div>
                 <div>&nbsp;</div>
-                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
-                            Data="@accounts" TItem="Account" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5"
+                            AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                            Data="@trades" TItem="TradeBlotter" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
                     <Columns>
-                        <RadzenDataGridColumn TItem="Account" Property="MasterCode" Title="Code" Filterable="false" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
-                        <RadzenDataGridColumn TItem="Account" Property="AccountName" Title="Name" Frozen="true" Width="160px" />
-                        <RadzenDataGridColumn TItem="Account" Property="DeskCode" Title="Desk" Width="160px" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="TradeDate"  Title="Trade Date" Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="ClientId"   Title="Client Id"  Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="Client"     Title="Client"     Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="BuySell"    Title="Buy/Sell"   Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="Quantity"   Title="Quantity"   Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="Underlying" Title="Underlying" Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="Expiration" Title="Expiration" Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="Strike"     Title="Strike"     Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="PutCall"    Title="Put/Call"   Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="Price"      Title="Price"      Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn TItem="TradeBlotter" Property="Otc"        Title="Otc"        Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
                     </Columns>
                 </RadzenDataGrid>
             </div>
@@ -52,11 +82,33 @@ else
 
 @code {
     IEnumerable<Account> accounts;
+    IEnumerable<OpenPosition> positions;
+    IEnumerable<TradeBlotter> trades;
+
+    IList<Account> selectedAccounts;
+
+    IList<Account> SelectedAccounts
+    {
+        get { return selectedAccounts; }
+        set 
+        { 
+            selectedAccounts = value;  
+            new Task(async () =>
+                {
+                    await viewModel.ProcessSelection(selectedAccounts.Select(x => x.MasterCode)) ;
+
+                    positions = viewModel.Positions;
+                    trades    = viewModel.Trades;
+                
+                }).Start();
+        }
+    }
 
     protected override async Task OnInitializedAsync()
     {
         await viewModel.Initialize();
 
         accounts = viewModel.Accounts;
+        selectedAccounts = accounts.Take(1)?.ToList();
     }
 }

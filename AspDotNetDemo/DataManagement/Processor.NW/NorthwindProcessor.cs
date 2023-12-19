@@ -58,7 +58,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Customer> customers = null;
             try
             {
-                customers = await _customerData.Read($"[CustomerID] IN {ids.ToInClause<int>()}");
+                customers = await _customerData.Read(ids.ToInClause<int>("[CustomerID]"));
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Product> products = null;
             try
             {
-                products = await _productData.Read($"[ProductID] IN {ids.ToInClause<int>()}");
+                products = await _productData.Read(ids.ToInClause<int>("[ProductID]"));
             }
             catch (Exception ex)
             {
@@ -86,7 +86,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Employee> employees = null;
             try
             {
-                employees = await _employeeData.Read($"[EmployeeID] IN {ids.ToInClause<int>()}");
+                employees = await _employeeData.Read(ids.ToInClause<int>("[EmployeeID]"));
             }
             catch (Exception ex)
             {
@@ -100,7 +100,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Order> orders = null;
             try
             {
-                orders = await _orderData.Read($"[OrderID] IN {ids.ToInClause<int>()}");
+                orders = await _orderData.Read(ids.ToInClause<int>("[OrderID]"));
 
 				/////////////////////////////////////////////////////////////////////////////
                 // makeshift code, cache is to be used instead
@@ -140,7 +140,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Supplier> suppliers = null;
             try
             {
-                suppliers = await _supplierData.Read($"[SupplierID] IN {ids.ToInClause<int>()}");
+                suppliers = await _supplierData.Read(ids.ToInClause<int>("[SupplierID]"));
             }
             catch (Exception ex)
             {
@@ -154,7 +154,7 @@ namespace Clio.Demo.DataManager.Processor
             IEnumerable<Territory> territories = null;
             try
             {
-                territories = await _territoryData.Read($"[TerritoryID] IN {ids.ToInClause<int>()}");
+                territories = await _territoryData.Read(ids.ToInClause<int>("[TerritoryID]"));
             }
             catch (Exception ex)
             {

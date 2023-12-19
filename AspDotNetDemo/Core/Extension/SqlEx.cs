@@ -44,9 +44,9 @@ namespace Clio.Demo.Core.Extension
             return $"DELETE {mapTable(entity)} WHERE Id = {entity.Id}";
         }
 
-        public static string ToInClause<T>(this IEnumerable<T> values)
+        public static string ToInClause<T>(this IEnumerable<T> values, string column)
         { 
-            return $"({ string.Join(",", values.Select(x => $"{sqlFormat(x)}"))})";
+            return values == null || column == null ? null : $"WHERE {column} IN ({string.Join(",", values.Select(x => $"{sqlFormat(x)}"))})";
         }
         
         private static string getPropValues(IEntity entity, IEnumerable<string> columns = null)

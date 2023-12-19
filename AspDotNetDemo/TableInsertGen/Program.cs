@@ -9,25 +9,39 @@ namespace TableInsertGen
         {
             List<string> inserts = new List<string>();
 
+            Dictionary<string, string> clients = new Dictionary<string, string>();
+            
             for (int x = 0; x < Clients.Length; x++)
             {
-                inserts.Add($"INSERT INTO [dbo].[Account] VALUES ('{AcctCode(x)}',NULL,'{Clients[x]}','A','{Date()}')");
+                string account = AcctCode(x);
+                string client = Clients[x];
+
+                inserts.Add($"INSERT INTO [dbo].[Account] VALUES ('{account}',NULL,'{client}','A','{Date()}')");
+                clients.Add(account, client);
             }
             File.WriteAllLines("../../../accounts.txt", inserts);
 
+            
+            
             inserts.Clear();
 
-            for (int x = 0; x < Clients.Length; x++)
+            for (int x = 0; x < 500; x++)
             {
-                inserts.Add($"INSERT INTO [dbo].[OpenPosition] VALUES ('{AcctCode(x)}',{TradeDate()},'{Und()}',{Qty()},{Exp()},{Price()},'{PC()}',{Price()},NULL,NULL,'{Date()}',{TradeDate()},{TradeDate()},'O','C')");
+                string account = AcctCode();
+                string client  = clients[account];
+                
+                inserts.Add($"INSERT INTO [dbo].[OpenPosition] VALUES ('{account}',{TradeDate()},'{Und()}',{Qty()},{Exp()},{Price()},'{PC()}',{Price()},NULL,NULL,'{Date()}',{TradeDate()},{TradeDate()},'O','C')");
             }
             File.WriteAllLines("../../../position.txt", inserts);
 
             inserts.Clear();
 
-            for (int x = 0; x < Clients.Length; x++)
+            for (int x = 0; x < 500; x++)
             {
-                inserts.Add($"INSERT INTO [dbo].[TradeBlotter] VALUES ({TradeDate()},'{AcctCode(x)}','{Clients[x]}','{Side()}',{Qty()},'{Und()}',{Exp()},{Price()},'{PC()}',{Price()},NULL)");
+                string account = AcctCode();
+                string client = clients[account];
+
+                inserts.Add($"INSERT INTO [dbo].[TradeBlotter] VALUES ({TradeDate()},'{account}','{client}','{Side()}',{Qty()},'{Und()}',{Exp()},{Price()},'{PC()}',{Price()},NULL)");
             }
             File.WriteAllLines("../../../blotter.txt", inserts);
 
@@ -43,6 +57,14 @@ namespace TableInsertGen
         static string AcctCode(int next)
         {
             return $"M00{next+100}";
+        }
+
+        static string AcctCode()
+        {
+            Random rnd = new Random();
+            int code = rnd.Next(100, 100 + Clients.Length - 1);
+
+            return $"M00{code.ToString("D3")}";
         }
 
         static string Date()
@@ -244,61 +266,61 @@ namespace TableInsertGen
             "CAMBIAR INVESTORS",
             "PARALLAX",
             "LIBRE MAX",
-            "BENGAL",
-            "LA BANQUE POSTALE AM",
-            "WUESTENROT",
-            "1832 ASSET MANAGEMENT LP FKA GCIC LTD",
-            "WINSLOW",
-            "MILENCO",
-            "FARALLON",
-            "HILLTOP",
-            "HIGHLINE CAPITAL MANAGEMENT LLC",
-            "RIVER BIRCH",
-            "TRELLUS",
-            "DLD ASSET MGMT",
-            "EDF MANN",
-            "UNIVERSA",
-            "BREVAN HOWARD",
-            "MFC GLOBAL INV MGMT US LLC",
-            "ELLIOTT MANAGEMENT CORPORATION",
-            "EMCO FI E",
-            "BANCA IMI ITALY",
-            "CO NCORDANC E",
-            "AERIS CAPITAL",
-            "NOMURA CONVEFITS LONDON",
-            "GUGGENHEIM",
-            "SYMMETRY PEAK MGMT",
-            "CAISSE DE DEPOT",
-            "LABFIANCHE",
-            "KEY GROUP",
-            "AP4",
-            "JBT CAPITAL INC",
-            "TI-IOFISTEN JABAS",
-            "CAXT ON",
-            "MAP LE/ROSE LANE",
-            "BESSEMER TRUST",
-            "SCHROEDEFIS",
-            "QUAD CAPITAL",
-            "NOMURA FIXED INCOME",
-            "BNP AM",
-            "AMUNDI",
-            "JPM ASSET MGMT LONDON",
-            "NSL AC 250643",
-            "ALGEBFIIS",
-            "NOMURA PROP LONDON",
-            "METAVAL",
-            "BTIG",
-            "BTG",
-            "MD SASS ASSOCIATES INC.",
-            "FIDELITY IM",
-            "TIMBER HILL",
-            "TAMALPAIS",
-            "XARAF",
-            "HBK",
-            "PIONEERPATH",
-            "WESTCH ESTER CAPITAL",
-            "GALLEON",
-            "CLAFIIUM CAPITAL",
+            //"BENGAL",
+            //"LA BANQUE POSTALE AM",
+            //"WUESTENROT",
+            //"1832 ASSET MANAGEMENT LP FKA GCIC LTD",
+            //"WINSLOW",
+            //"MILENCO",
+            //"FARALLON",
+            //"HILLTOP",
+            //"HIGHLINE CAPITAL MANAGEMENT LLC",
+            //"RIVER BIRCH",
+            //"TRELLUS",
+            //"DLD ASSET MGMT",
+            //"EDF MANN",
+            //"UNIVERSA",
+            //"BREVAN HOWARD",
+            //"MFC GLOBAL INV MGMT US LLC",
+            //"ELLIOTT MANAGEMENT CORPORATION",
+            //"EMCO FI E",
+            //"BANCA IMI ITALY",
+            //"CO NCORDANC E",
+            //"AERIS CAPITAL",
+            //"NOMURA CONVEFITS LONDON",
+            //"GUGGENHEIM",
+            //"SYMMETRY PEAK MGMT",
+            //"CAISSE DE DEPOT",
+            //"LABFIANCHE",
+            //"KEY GROUP",
+            //"AP4",
+            //"JBT CAPITAL INC",
+            //"TI-IOFISTEN JABAS",
+            //"CAXT ON",
+            //"MAP LE/ROSE LANE",
+            //"BESSEMER TRUST",
+            //"SCHROEDEFIS",
+            //"QUAD CAPITAL",
+            //"NOMURA FIXED INCOME",
+            //"BNP AM",
+            //"AMUNDI",
+            //"JPM ASSET MGMT LONDON",
+            //"NSL AC 250643",
+            //"ALGEBFIIS",
+            //"NOMURA PROP LONDON",
+            //"METAVAL",
+            //"BTIG",
+            //"BTG",
+            //"MD SASS ASSOCIATES INC.",
+            //"FIDELITY IM",
+            //"TIMBER HILL",
+            //"TAMALPAIS",
+            //"XARAF",
+            //"HBK",
+            //"PIONEERPATH",
+            //"WESTCH ESTER CAPITAL",
+            //"GALLEON",
+            //"CLAFIIUM CAPITAL",
         };   
     }        
 }            
