@@ -23,10 +23,10 @@ else
             <div class="row">
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
-                <div class='e-statustext'>Clients</div>
+                <div class='e-statustext' >Clients</div>
                 <div>&nbsp;</div>
-                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" 
-                                AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5"
+                            AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Density="@Density"
                             SelectionMode="DataGridSelectionMode.Single" @bind-Value=@SelectedAccounts
                             Data="@accounts" TItem="Account" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
                     <Columns>
@@ -36,10 +36,10 @@ else
                 </RadzenDataGrid>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
-                <div class='e-statustext'>Open Positions</div>
+                <div class='e-statustext' size="16">Open Positions</div>
                 <div>&nbsp;</div>
-                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" 
-                                AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="10"
+                            AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Density="@Density"
                                 Data="@positions" TItem="OpenPosition" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
                     <Columns>
                         <RadzenDataGridColumn TItem="OpenPosition" Property="MasterCode"   Title="Master Code"   Width="80px"  Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
@@ -58,8 +58,8 @@ else
                 <div>&nbsp;</div>
                 <div class='e-statustext'>Trade Blotter</div>
                 <div>&nbsp;</div>
-                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5"
-                            AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="10"
+                            AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Density="@Density"
                             Data="@trades" TItem="TradeBlotter" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
                     <Columns>
                         <RadzenDataGridColumn TItem="TradeBlotter" Property="TradeDate"  Title="Trade Date" Width="80px" Filterable="false" Frozen="true" TextAlign="TextAlign.Center" />
@@ -81,6 +81,8 @@ else
 }
 
 @code {
+    Density Density = Density.Compact; 
+    
     IEnumerable<Account> accounts;
     IEnumerable<OpenPosition> positions;
     IEnumerable<TradeBlotter> trades;
