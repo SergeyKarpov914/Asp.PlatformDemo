@@ -25,9 +25,9 @@ else
                 <div>&nbsp;</div>
                 <div class='e-statustext' >Clients</div>
                 <div>&nbsp;</div>
-                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5"
-                            AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Density="@Density"
-                            SelectionMode="DataGridSelectionMode.Single" @bind-Value=@SelectedAccounts
+                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5"
+                            AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Density="@Density" Width="200"
+                            SelectionMode="DataGridSelectionMode.Single" @bind-Value=@selectedAccounts RowSelect=@RowSelect
                             Data="@accounts" TItem="Account" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
                     <Columns>
                         <RadzenDataGridColumn TItem="Account"  Property="MasterCode"  Title="Code" Filterable="false" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
@@ -38,7 +38,7 @@ else
                 <div>&nbsp;</div>
                 <div class='e-statustext' size="16">Open Positions</div>
                 <div>&nbsp;</div>
-                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="10"
+                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="10"
                             AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Density="@Density"
                                 Data="@positions" TItem="OpenPosition" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
                     <Columns>
@@ -58,7 +58,7 @@ else
                 <div>&nbsp;</div>
                 <div class='e-statustext'>Trade Blotter</div>
                 <div>&nbsp;</div>
-                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="10"
+                <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="10"
                             AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Density="@Density"
                             Data="@trades" TItem="TradeBlotter" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
                     <Columns>
@@ -82,28 +82,18 @@ else
 
 @code {
     Density Density = Density.Compact; 
-    
+
     IEnumerable<Account> accounts;
     IEnumerable<OpenPosition> positions;
     IEnumerable<TradeBlotter> trades;
 
     IList<Account> selectedAccounts;
 
-    IList<Account> SelectedAccounts
+    async Task RowSelect(Account account)
     {
-        get { return selectedAccounts; }
-        set 
-        { 
-            selectedAccounts = value;  
-            new Task(async () =>
-                {
-                    await viewModel.ProcessSelection(selectedAccounts.Select(x => x.MasterCode)) ;
-
-                    positions = viewModel.Positions;
-                    trades    = viewModel.Trades;
-                
-                }).Start();
-        }
+        await viewModel.ProcessSelection(new[] { account.MasterCode });
+        positions = viewModel.Positions;
+        trades = viewModel.Trades;
     }
 
     protected override async Task OnInitializedAsync()
