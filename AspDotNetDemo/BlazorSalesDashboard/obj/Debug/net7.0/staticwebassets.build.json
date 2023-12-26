@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0ehj7BJbVe/IXS/5oiInrq3o25a9oD5bE+reWgOhTwg=",
+  "Hash": "z5l4BpgZN1Yqv/NVMjMQUQ49dcKf8kiq2rYwiS1AwBQ=",
   "Source": "BlazorSalesDashboard",
   "BasePath": "_content/BlazorSalesDashboard",
   "Mode": "Default",
@@ -253,6 +253,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorSalesDashboard\\wwwroot\\css\\tailwind.css",
+      "SourceId": "BlazorSalesDashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorSalesDashboard\\wwwroot\\",
+      "BasePath": "_content/BlazorSalesDashboard",
+      "RelativePath": "css/tailwind.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\tailwind.css"
+    },
+    {
+      "Identity": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorSalesDashboard\\wwwroot\\css\\tailwind-blazor.min.css",
+      "SourceId": "BlazorSalesDashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorSalesDashboard\\wwwroot\\",
+      "BasePath": "_content/BlazorSalesDashboard",
+      "RelativePath": "css/tailwind-blazor.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\tailwind-blazor.min.css"
     },
     {
       "Identity": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorSalesDashboard\\wwwroot\\favicon.png",

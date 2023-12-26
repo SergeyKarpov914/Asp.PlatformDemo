@@ -1,0 +1,97 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\obj\\Debug\\net7.0\\build-gz\\0vh11x37.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorWasmDashboard.styles.css",
+      "PackagePath": "staticwebassets\\BlazorWasmDashboard.styles.css"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorWasmDashboard\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BlazorWasmDashboard.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.BlazorWasmDashboard.props",
+      "PackagePath": "build\\BlazorWasmDashboard.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.BlazorWasmDashboard.props",
+      "PackagePath": "buildMultiTargeting\\BlazorWasmDashboard.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.BlazorWasmDashboard.props",
+      "PackagePath": "buildTransitive\\BlazorWasmDashboard.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

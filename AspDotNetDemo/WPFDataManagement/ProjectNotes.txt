@@ -1,0 +1,17 @@
+﻿
+https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid/?view=aspnetcore-8.0#blazor-hybrid-apps-with-wpf-and-windows-forms
+https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.webview.wpf.blazorwebview?view=net-maui-8.0
+
+https://jspuij.github.io/BlazorWebView.Docs/pages/wpftutorial.html?tabs=addwpf-1
+
+BlazorWebView.Wpf will cause run-tima compatibility issues, which should be addressed using this:
+
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed
+
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+
+Should correspond to folder name in C:\Program Files (x86)\Windows Kits\10\Platforms\UAP
+
+https://github.com/jspuij/BlazorWebViewTutorial/tree/5_wpf

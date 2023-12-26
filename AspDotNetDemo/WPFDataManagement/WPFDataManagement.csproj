@@ -2,9 +2,55 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\sample-data\**" />
+    <Content Remove="wwwroot\sample-data\**" />
+    <EmbeddedResource Remove="wwwroot\sample-data\**" />
+    <None Remove="wwwroot\sample-data\**" />
+    <Page Remove="wwwroot\sample-data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="wwwroot\css\app.css" />
+    <None Remove="wwwroot\css\bootstrap\bootstrap.min.css" />
+    <None Remove="wwwroot\css\bootstrap\bootstrap.min.css.map" />
+    <None Remove="wwwroot\css\open-iconic\FONT-LICENSE" />
+    <None Remove="wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
+    <None Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.eot" />
+    <None Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.otf" />
+    <None Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
+    <None Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.ttf" />
+    <None Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.woff" />
+    <None Remove="wwwroot\css\open-iconic\ICON-LICENSE" />
+    <None Remove="wwwroot\css\open-iconic\README.md" />
+    <None Remove="wwwroot\favicon.png" />
+    <None Remove="wwwroot\icon-192.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BlazorWebView.Wpf" Version="0.2.0" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.0.4" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorWasmDashboard\BlazorWasmDashboard.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="wwwroot\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>

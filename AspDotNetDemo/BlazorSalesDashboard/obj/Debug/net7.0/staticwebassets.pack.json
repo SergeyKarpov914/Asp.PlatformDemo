@@ -53,6 +53,14 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorSalesDashboard\\wwwroot\\css\\tailwind-blazor.min.css",
+      "PackagePath": "staticwebassets\\css\\tailwind-blazor.min.css"
+    },
+    {
+      "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorSalesDashboard\\wwwroot\\css\\tailwind.css",
+      "PackagePath": "staticwebassets\\css\\tailwind.css"
+    },
+    {
       "Id": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\BlazorSalesDashboard\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },

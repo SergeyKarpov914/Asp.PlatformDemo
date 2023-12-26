@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiSignalRApp", "WebApiS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableInsertGen", "TableInsertGen\TableInsertGen.csproj", "{8AD07D17-F113-49D9-8650-54B702B97F75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSalesDashboard", "BlazorSalesDashboard\BlazorSalesDashboard.csproj", "{08285B47-E772-4804-B290-124211F05035}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSalesDashboard", "BlazorSalesDashboard\BlazorSalesDashboard.csproj", "{08285B47-E772-4804-B290-124211F05035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasmDashboard", "BlazorWasmDashboard\BlazorWasmDashboard.csproj", "{7D18D3AA-2B85-4121-B24E-4219E4F8699D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{08285B47-E772-4804-B290-124211F05035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08285B47-E772-4804-B290-124211F05035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08285B47-E772-4804-B290-124211F05035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D18D3AA-2B85-4121-B24E-4219E4F8699D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D18D3AA-2B85-4121-B24E-4219E4F8699D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D18D3AA-2B85-4121-B24E-4219E4F8699D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D18D3AA-2B85-4121-B24E-4219E4F8699D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +120,7 @@ Global
 		{381E40F9-B229-4668-B0FB-BD4C68763F73} = {6E078F95-D408-438D-A0B9-49CC9EB71202}
 		{8AD07D17-F113-49D9-8650-54B702B97F75} = {C4A90B14-6915-4995-8C4D-3AA0E3107397}
 		{08285B47-E772-4804-B290-124211F05035} = {C4A90B14-6915-4995-8C4D-3AA0E3107397}
+		{7D18D3AA-2B85-4121-B24E-4219E4F8699D} = {C4A90B14-6915-4995-8C4D-3AA0E3107397}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A8D45274-16AF-4388-8E19-0CD79973A0F7}
