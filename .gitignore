@@ -96,3 +96,5 @@ Northwind.sql/SqlCnverter/obj/
 Northwind.sql/SqlCnverter/.vs/
 AspDotNetDemo/TableInsertGen/obj/
 AspDotNetDemo/TableInsertGen/bin/
+AspDotNetDemo/BlazorWpfApp/bin/
+AspDotNetDemo/BlazorWpfApp/obj/
