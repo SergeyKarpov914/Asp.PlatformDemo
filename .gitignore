@@ -98,3 +98,5 @@ AspDotNetDemo/TableInsertGen/obj/
 AspDotNetDemo/TableInsertGen/bin/
 AspDotNetDemo/BlazorWpfApp/bin/
 AspDotNetDemo/BlazorWpfApp/obj/
+AspDotNetDemo/BlazorWasmDashboard/obj/
+AspDotNetDemo/Core6/obj/

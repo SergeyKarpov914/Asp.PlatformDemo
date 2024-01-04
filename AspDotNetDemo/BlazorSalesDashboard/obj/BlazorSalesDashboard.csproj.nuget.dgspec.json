@@ -110,8 +110,8 @@
               "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Abstractions\\Abstractions.csproj": {
                 "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Abstractions\\Abstractions.csproj"
               },
-              "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj": {
-                "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj"
+              "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj": {
+                "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj"
               },
               "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DataManagement\\DataManagement.csproj": {
                 "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DataManagement\\DataManagement.csproj"
@@ -163,12 +163,12 @@
         }
       }
     },
-    "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj": {
+    "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj",
-        "projectName": "Demo.Core",
-        "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj",
+        "projectName": "Demo.Core7",
+        "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj",
         "packagesPath": "C:\\Users\\cliov\\.nuget\\packages\\",
         "outputPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\obj\\",
         "projectStyle": "PackageReference",
@@ -338,8 +338,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj": {
-                "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj"
+              "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj": {
+                "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj"
               },
               "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Data\\Data.csproj": {
                 "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Data\\Data.csproj"
@@ -408,8 +408,8 @@
               "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Abstractions\\Abstractions.csproj": {
                 "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Abstractions\\Abstractions.csproj"
               },
-              "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj": {
-                "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj"
+              "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj": {
+                "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj"
               },
               "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DataManagement\\DataManagement.csproj": {
                 "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DataManagement\\DataManagement.csproj"
@@ -478,8 +478,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj": {
-                "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj"
+              "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj": {
+                "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj"
               }
             }
           }

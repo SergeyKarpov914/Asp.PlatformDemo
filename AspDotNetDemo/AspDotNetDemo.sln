@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{869BBA75-2655-41C9-B432-F064572043A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{F649E4C5-CA68-4B22-9E9D-9235BF24DCD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core7", "Core\Core7.csproj", "{F649E4C5-CA68-4B22-9E9D-9235BF24DCD8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataManagement", "DataManagement\DataManagement.csproj", "{A1A6ABA1-7BD1-424E-A962-5B11F8A5E627}"
 EndProject
@@ -37,9 +37,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableInsertGen", "TableInse
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSalesDashboard", "BlazorSalesDashboard\BlazorSalesDashboard.csproj", "{08285B47-E772-4804-B290-124211F05035}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasmDashboard", "BlazorWasmDashboard\BlazorWasmDashboard.csproj", "{7D18D3AA-2B85-4121-B24E-4219E4F8699D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasmDashboard", "BlazorWasmDashboard\BlazorWasmDashboard.csproj", "{7D18D3AA-2B85-4121-B24E-4219E4F8699D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWpfApp", "BlazorWpfApp\BlazorWpfApp.csproj", "{3A364DEB-33DF-403A-9331-E59381629CFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWpfApp", "BlazorWpfApp\BlazorWpfApp.csproj", "{3A364DEB-33DF-403A-9331-E59381629CFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Lib", "Core.Lib\Core.Lib.csproj", "{D58FBBE5-2E9F-47C1-88DE-F907E2A29D8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core6", "Core6\Core6.csproj", "{419D14DB-A126-4EA0-BF2B-861E8AE5ACE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +107,14 @@ Global
 		{3A364DEB-33DF-403A-9331-E59381629CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A364DEB-33DF-403A-9331-E59381629CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A364DEB-33DF-403A-9331-E59381629CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D58FBBE5-2E9F-47C1-88DE-F907E2A29D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58FBBE5-2E9F-47C1-88DE-F907E2A29D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D58FBBE5-2E9F-47C1-88DE-F907E2A29D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D58FBBE5-2E9F-47C1-88DE-F907E2A29D8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{419D14DB-A126-4EA0-BF2B-861E8AE5ACE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419D14DB-A126-4EA0-BF2B-861E8AE5ACE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419D14DB-A126-4EA0-BF2B-861E8AE5ACE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419D14DB-A126-4EA0-BF2B-861E8AE5ACE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +133,8 @@ Global
 		{08285B47-E772-4804-B290-124211F05035} = {C4A90B14-6915-4995-8C4D-3AA0E3107397}
 		{7D18D3AA-2B85-4121-B24E-4219E4F8699D} = {C4A90B14-6915-4995-8C4D-3AA0E3107397}
 		{3A364DEB-33DF-403A-9331-E59381629CFE} = {C4A90B14-6915-4995-8C4D-3AA0E3107397}
+		{D58FBBE5-2E9F-47C1-88DE-F907E2A29D8D} = {243388C6-11EA-418E-A346-F3ECB51B2F25}
+		{419D14DB-A126-4EA0-BF2B-861E8AE5ACE7} = {243388C6-11EA-418E-A346-F3ECB51B2F25}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A8D45274-16AF-4388-8E19-0CD79973A0F7}

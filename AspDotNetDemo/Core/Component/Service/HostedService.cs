@@ -2,9 +2,7 @@
 using Clio.Demo.Util.Telemetry.Seri;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using System.Diagnostics.Metrics;
 using System.Globalization;
-using System.Threading;
 
 namespace Clio.Demo.Core.Component.Service
 {

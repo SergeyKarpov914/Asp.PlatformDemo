@@ -2233,7 +2233,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Clio.Demo..Abstractions": "1.0.0",
-          "Demo.Core": "1.0.0",
+          "Demo.Core7": "1.0.0",
           "Demo.Data": "1.0.0",
           "Demo.DataManagement": "1.0.0"
         },
@@ -2244,7 +2244,7 @@
           "bin/placeholder/Clio.Demo.DataPresentation.dll": {}
         }
       },
-      "Demo.Core/1.0.0": {
+      "Demo.Core7/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -2271,17 +2271,17 @@
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
-          "bin/placeholder/Demo.Core.dll": {}
+          "bin/placeholder/Demo.Core7.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Demo.Core.dll": {}
+          "bin/placeholder/Demo.Core7.dll": {}
         }
       },
       "Demo.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Demo.Core": "1.0.0"
+          "Demo.Core7": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Demo.Data.dll": {}
@@ -2294,7 +2294,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Demo.Core": "1.0.0",
+          "Demo.Core7": "1.0.0",
           "Demo.Data": "1.0.0"
         },
         "compile": {
@@ -6397,10 +6397,10 @@
       "path": "../DataPresentation/DataPresentation.csproj",
       "msbuildProject": "../DataPresentation/DataPresentation.csproj"
     },
-    "Demo.Core/1.0.0": {
+    "Demo.Core7/1.0.0": {
       "type": "project",
-      "path": "../Core/Core.csproj",
-      "msbuildProject": "../Core/Core.csproj"
+      "path": "../Core/Core7.csproj",
+      "msbuildProject": "../Core/Core7.csproj"
     },
     "Demo.Data/1.0.0": {
       "type": "project",
@@ -6417,7 +6417,7 @@
     "net7.0": [
       "Clio.Demo..Abstractions >= 1.0.0",
       "Clio.Demo.DataPresentation >= 1.0.0",
-      "Demo.Core >= 1.0.0",
+      "Demo.Core7 >= 1.0.0",
       "Demo.Data >= 1.0.0",
       "Demo.DataManagement >= 1.0.0",
       "Radzen.Blazor >= 4.23.4"
@@ -6459,8 +6459,8 @@
             "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Abstractions\\Abstractions.csproj": {
               "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Abstractions\\Abstractions.csproj"
             },
-            "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj": {
-              "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core.csproj"
+            "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj": {
+              "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Core\\Core7.csproj"
             },
             "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DataManagement\\DataManagement.csproj": {
               "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DataManagement\\DataManagement.csproj"

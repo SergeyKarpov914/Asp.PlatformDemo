@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Abstractions\Abstractions.csproj" />
-    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Core\Core7.csproj" />
     <ProjectReference Include="..\DataManagement\DataManagement.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
