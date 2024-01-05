@@ -1,6 +1,6 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Component.Master.App;
 using Clio.Demo.Core.Gateway;
+using Clio.Demo.Core7.Asp;
 using Clio.Demo.DataManagement.Processor.NW.DataModel;
 using Clio.Demo.DataManager.Processor;
 using Microsoft.Extensions.DependencyInjection;

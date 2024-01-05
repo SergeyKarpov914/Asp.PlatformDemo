@@ -1,6 +1,6 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Component.Gateway;
-using Clio.Demo.Core.Component.Service;
+using Clio.Demo.Core7.Component;
+using Clio.Demo.Core7.Gateway;
 using Clio.Demo.Domain.Data.Northwind;
 using Clio.Demo.Extension;
 using Clio.Demo.Util.Telemetry.Seri;

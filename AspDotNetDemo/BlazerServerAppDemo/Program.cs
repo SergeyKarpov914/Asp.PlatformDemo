@@ -1,4 +1,4 @@
-using Clio.Demo.Core.Component.Master;
+using Clio.Demo.Core7.Asp;
 using Clio.Demo.DataPresentation.Gateway;
 using Clio.Demo.DataPresentation.ViewModel;
 using Syncfusion.Blazor;

@@ -3,7 +3,7 @@ using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Domain.Data.Northwind;
 using Microsoft.Extensions.Configuration;
 using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core;
+using Clio.Demo.Core7.Pattern;
 
 namespace Clio.Demo.DataManagement.Processor.NW.DataModel
 {

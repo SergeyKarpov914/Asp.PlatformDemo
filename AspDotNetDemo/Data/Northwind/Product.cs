@@ -1,4 +1,4 @@
-﻿using Clio.Demo.Core.Component.Master.Pattern;
+﻿using Clio.Demo.Core7.Pattern;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 

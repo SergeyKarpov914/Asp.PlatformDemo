@@ -1,16 +1,16 @@
-﻿using Clio.Demo.Core.Component.Gateway;
-using Clio.Demo.Abstraction.Interface;
+﻿using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Domain.Data.Northwind;
 using Clio.Demo.DataManager.Processor;
 using Clio.Demo.Extension;
 using Clio.Demo.Util.Telemetry.Seri;
 using Microsoft.Extensions.Configuration;
-using Clio.Demo.Core.Component.Service;
 using System.Diagnostics;
+using Clio.Demo.Core7.Gateway;
+using Clio.Demo.Core7.Asp.Net;
 
 namespace Clio.Demo.ConsoleDataManagement.Service
 {
-    public sealed class CrudTestService : HostedService
+    public sealed class CrudTestService : HostedServiceMaster
     {
         public CrudTestService(NorthwindProcessor processor, IConfiguration configuration, IHttpClientFactory clientFactory) : base(configuration, clientFactory)
         {

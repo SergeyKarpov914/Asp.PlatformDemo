@@ -1,6 +1,6 @@
 using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Core.Component.Gateway;
-using Clio.Demo.Core.Component.Master;
+using Clio.Demo.Core7.Asp;
 using Clio.Demo.DataManagement.Processor.EqD;
 using Clio.Demo.DataManagement.Processor.EqD.DataModel;
 using Clio.Demo.DataPresentation.ViewModel;

@@ -1,5 +1,5 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core;
+using Clio.Demo.Core7.Pattern;
 using Clio.Demo.Domain.Data.EqDeriv;
 using Microsoft.Extensions.Configuration;
 

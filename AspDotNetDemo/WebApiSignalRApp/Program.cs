@@ -1,7 +1,7 @@
 using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Core.Component.Gateway;
-using Clio.Demo.Core.Component.Master.App;
-using Clio.Demo.Core.Component.Master.Asp;
+using Clio.Demo.Core7.Asp;
+using Clio.Demo.Core7.Component;
 using Clio.Demo.Domain.Data.Processor;
 using Clio.Demo.Domain.Data.Processor.DataModel;
 
