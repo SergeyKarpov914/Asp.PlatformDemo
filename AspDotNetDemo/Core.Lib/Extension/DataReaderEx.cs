@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace Clio.Demo.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
 	public static class DataReaderEx
 	{

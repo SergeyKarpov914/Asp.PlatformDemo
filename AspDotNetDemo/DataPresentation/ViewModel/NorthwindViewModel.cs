@@ -1,8 +1,8 @@
-﻿using Clio.Demo.Domain.Data.Northwind;
+﻿using Clio.Demo.Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Util;
 using Clio.Demo.DataPresentation.Elements;
 using Clio.Demo.DataPresentation.Gateway;
-using Clio.Demo.Extension;
-using Clio.Demo.Util.Telemetry.Seri;
+using Clio.Demo.Domain.Data.Northwind;
 using System.Collections.ObjectModel;
 
 namespace Clio.Demo.DataPresentation.ViewModel

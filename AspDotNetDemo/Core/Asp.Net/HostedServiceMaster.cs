@@ -1,6 +1,5 @@
-﻿using Clio.Demo.Core.Util;
+﻿using Clio.Demo.Core.Lib.Util;
 using Clio.Demo.Core7.Component;
-using Clio.Demo.Util.Telemetry.Seri;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System.Globalization;

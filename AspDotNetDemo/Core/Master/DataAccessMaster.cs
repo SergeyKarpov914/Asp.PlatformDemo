@@ -1,10 +1,7 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Extension;
-using Clio.Demo.Core.Util;
-using Clio.Demo.Extension;
-using Clio.Demo.Util.Telemetry.NLog;
+using Clio.Demo.Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Util;
 using Microsoft.Extensions.Configuration;
-
 
 namespace Clio.Demo.Core7.Pattern
 {
@@ -79,12 +76,12 @@ namespace Clio.Demo.Core7.Pattern
 
         #region visiting professor
 
-        protected virtual async Task create<T>(T entity) where T : class, IEntity, new()
+        protected virtual async Task create(T entity) 
         {
             await _sqlClient.Insert(entity, _connection);
         }
 
-        protected virtual async Task<IEnumerable<T>> read(string clause = null)
+        protected virtual async Task<IEnumerable<T>> read(string clause = null) 
         {
             return await _sqlClient.Read<T>(typeof(T).SelectQuery(clause), _connection);
         }

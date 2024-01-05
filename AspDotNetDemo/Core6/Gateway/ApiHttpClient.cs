@@ -1,12 +1,12 @@
-﻿using Clio.Demo.Extension;
+﻿using Clio.Demo.Abstraction.Data;
+using Clio.Demo.Abstraction.Interface;
+using Clio.Demo.Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Util;
+using Clio.Demo.Core7.Component;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http.Headers;
-using System.Text.Json;
 using System.Text;
-using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Abstraction.Data;
-using Clio.Demo.Util.Telemetry.Seri;
-using Clio.Demo.Core7.Component;
+using System.Text.Json;
 
 namespace Clio.Demo.Core7.Gateway
 {

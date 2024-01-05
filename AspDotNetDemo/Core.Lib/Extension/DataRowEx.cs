@@ -1,10 +1,9 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using System;
+using System.Data;
 using System.Linq;
 using System.Reflection;
-using System;
-using System.Data;
 
-namespace Clio.Demo.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
 	public static class DataRowEx
 	{

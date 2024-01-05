@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Core.Lib.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
     public static class ExceptionEx
     {

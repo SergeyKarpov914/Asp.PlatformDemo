@@ -1,8 +1,6 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Extension;
-using Clio.Demo.Core.Util;
-using Clio.Demo.Extension;
-using Clio.Demo.Util.Telemetry.NLog;
+using Clio.Demo.Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Util;
 using Microsoft.Extensions.Configuration;
 
 

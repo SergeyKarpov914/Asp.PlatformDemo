@@ -1,8 +1,8 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Component.Gateway;
-using Clio.Demo.Core.Util;
+using Clio.Demo.Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Gateway;
+using Clio.Demo.Core.Lib.Util;
 using Clio.Demo.Core7.Component;
-using Clio.Demo.Extension;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 

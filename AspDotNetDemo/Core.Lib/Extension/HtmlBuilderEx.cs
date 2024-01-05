@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace Clio.Demo.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
 	public static class HtmlBuilderEx
 	{

@@ -19,7 +19,7 @@
     <ProjectReference Include="..\Core\Core7.csproj" />
     <ProjectReference Include="..\DataManagement\DataManagement.csproj" />
     <ProjectReference Include="..\DataPresentation\DataPresentation.csproj" />
-    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\DomainData\DomainData.csproj" />
   </ItemGroup>
 
 </Project>

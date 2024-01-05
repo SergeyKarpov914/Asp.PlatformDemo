@@ -1,14 +1,13 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Component.Gateway;
-using Clio.Demo.DataManagement.Processor.EqD.DataModel;
+using Clio.Demo.Core.Lib.Gateway;
 using Clio.Demo.DataManagement.Processor.EqD;
+using Clio.Demo.DataManagement.Processor.EqD.DataModel;
 using Clio.Demo.DataPresentation.ViewModel;
-using Microsoft.Extensions.DependencyInjection;
-using System.Windows;
-using Radzen;
 using Microsoft.Extensions.Configuration;
-using System.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Radzen;
 using System.IO;
+using System.Windows;
 
 namespace BlazorWpfApp
 {

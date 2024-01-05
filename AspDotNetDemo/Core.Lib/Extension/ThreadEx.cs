@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Clio.Demo.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
     public static class ThreadEx
 	{

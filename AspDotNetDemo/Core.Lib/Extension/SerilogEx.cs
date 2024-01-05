@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Core.Lib.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
     public static class SeriLoggerEx
     {

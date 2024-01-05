@@ -1,7 +1,6 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Util;
-using Clio.Demo.Extension;
-using Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Extension;
 using Microsoft.ApplicationInsights.Extensibility;
 using Serilog;
 using Serilog.Events;
@@ -9,9 +8,10 @@ using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.Collections.Generic;
 
-namespace Clio.Demo.Util.Telemetry.Seri
+
+namespace Clio.Demo.Core.Lib.Util
 {
-    public static class Log
+    public static class Serilog
     {
         #region constants
 
@@ -71,12 +71,12 @@ namespace Clio.Demo.Util.Telemetry.Seri
             _fileLogger    ?.Information(message);
         }
 
-        public static void Info(object sender, string name, Dictionary<string, string> eventTrack)
+        public static void Info(object sender, string name, Dictionary<string, string> eventTrack = null)
         {
             string message = LogUtil.log(sender, name, eventTrack);
 
             _fileLogger   ?.Information(message);
-            _consoleLogger?.EventToConsole(LogEventLevel.Information, Core.Util.LogUtil.log(sender), name, eventTrack);
+            _consoleLogger?.EventToConsole(LogEventLevel.Information, LogUtil.log(sender), name, eventTrack);
 
             //LogMaster.TelemetryClient?.TrackEvent(name, eventTrack);
         }
@@ -90,7 +90,7 @@ namespace Clio.Demo.Util.Telemetry.Seri
             _fileLogger    ?.Warning(message);
         }
 
-        public static void Error(object sender, Exception ex, string context = null, Steps steps = null)
+        public static void Error(object sender, Exception ex, string context = null, List<string> logs = null)
         {
             string message = LogUtil.err(sender, ex, context);
 
@@ -99,28 +99,25 @@ namespace Clio.Demo.Util.Telemetry.Seri
             _fileLogger    ?.Error(message);
 
             //LogMaster.TelemetryClient?.TrackException(ex);
-
-            steps?.Next(Core.Util.LogUtil.log(sender, $"ERROR: {ex.Short()}"));
+            //steps?.Next(LogUtil.log(sender, $"ERROR: {ex.Short()}"));
         }
 
-        public static void Block(object sender, IEnumerable<string> messages, string header = null)
+        public static void Block(object sender, IEnumerable<string> messages, string header = null, bool isDebug = false)
         {
             if (messages.IsEmpty()) return;
             
             string message = LogUtil.block(sender, messages, header);
 
-            _consoleLogger?.TextToConsole(LogEventLevel.Information, message);
-            _fileLogger   ?.Information(message);
-        }
-
-        public static void BlockDbg(object sender, IEnumerable<string> messages, string header = null)
-        {
-            if (messages.IsEmpty()) return;
-
-            string message = LogUtil.block(sender, messages, header);
-
-            _consoleLogger?.TextToConsole(LogEventLevel.Debug, message);
-            _fileLogger   ?.Debug(message);
+            if (isDebug)
+            {
+                _consoleLogger?.TextToConsole(LogEventLevel.Debug, message);
+                _fileLogger?.Debug(message);
+            }
+            else
+            {
+                _consoleLogger?.TextToConsole(LogEventLevel.Information, message);
+                _fileLogger?.Information(message);
+            }
         }
     }
 

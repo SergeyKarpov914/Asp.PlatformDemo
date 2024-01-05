@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
 
-namespace Clio.Demo.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
     public static class ObjectEx
 	{

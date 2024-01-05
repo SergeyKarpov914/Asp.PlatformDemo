@@ -1,5 +1,5 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Extension;
+using Clio.Demo.Core.Lib.Extension;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json.Serialization;
 
-namespace Clio.Demo.Core.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
     public static class SqlEx
     {

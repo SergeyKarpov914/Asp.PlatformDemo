@@ -1,10 +1,9 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Util;
+using Clio.Demo.Core.Lib.Pattern;
+using Clio.Demo.Core.Lib.Util;
 using Clio.Demo.Core7.Component;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
-using Log = Clio.Demo.Util.Telemetry.Seri.Log;
 
 namespace Clio.Demo.Core7.Asp
 {
@@ -17,9 +16,9 @@ namespace Clio.Demo.Core7.Asp
                 IHost host = Host.CreateDefaultBuilder(args)
                                  .ConfigureServices(addServices)
                                  .Build();
-
+#if SERILOG
                 Log.Initialize(host.Services.GetRequiredService<ILog>());
-
+#endif
                 LogUtil.RuntimeInfo(GetType(), "Starting", args, new[] { GetType() });
 
                 _configuration = processConfiguration(args);

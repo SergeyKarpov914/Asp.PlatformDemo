@@ -1,6 +1,4 @@
-﻿using Clio.Demo.Extension;
-using Core.Lib.Extension;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Clio.Demo.Core.Tests
 {

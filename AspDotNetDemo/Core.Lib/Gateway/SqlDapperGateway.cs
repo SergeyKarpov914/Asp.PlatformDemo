@@ -1,5 +1,5 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Util.Telemetry.NLog;
+using Clio.Demo.Core.Lib.Util;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Clio.Demo.Core.Component.Gateway
+namespace Clio.Demo.Core.Lib.Gateway
 {
     public sealed class SqlDapperGateway : ISqlGateway
     {

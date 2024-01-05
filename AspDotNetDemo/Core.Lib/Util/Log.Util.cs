@@ -1,8 +1,4 @@
-﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Extension;
-using Clio.Demo.Util.Telemetry.Seri;
-using Core.Lib.Extension;
-using Microsoft.ApplicationInsights;
+﻿using Clio.Demo.Core.Lib.Extension;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -13,24 +9,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 
-namespace Clio.Demo.Core.Util
+namespace Clio.Demo.Core.Lib.Util
 {
-    public class LogMaster : ILog
-    {
-        public IConfiguration Configuration { get; private set; }
-        public TelemetryClient TelemetryClient { get; private set; }
-
-        public LogMaster(IConfiguration configuration, TelemetryClient telemetryClient)
-        {
-            Configuration = configuration;
-            TelemetryClient = telemetryClient;
-        }
-        public LogMaster(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-    }
-
     public static class LogUtil
     {
         #region log formatting
@@ -189,7 +169,7 @@ namespace Clio.Demo.Core.Util
             {
                 if (log && !all.IsEmpty())
                 {
-                    Log.BlockDbg(sender, all, "Configuration");
+                    Log.Block(sender, all, "Configuration", true);
                 }
             }
             return all;

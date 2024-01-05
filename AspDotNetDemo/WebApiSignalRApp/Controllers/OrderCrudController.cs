@@ -1,8 +1,7 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Extension;
+using Clio.Demo.Core.Lib.Extension;
 using Clio.Demo.Domain.Data.Hbc;
 using Clio.Demo.Domain.Data.Processor;
-using Clio.Demo.Extension;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Clio.Demo.OrderCrudServer.Controllers

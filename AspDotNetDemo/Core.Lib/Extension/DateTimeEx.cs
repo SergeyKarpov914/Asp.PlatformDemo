@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Clio.Demo.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
     public static class DateTimeEx
     {

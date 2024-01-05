@@ -2626,7 +2626,7 @@
           "bin/placeholder/Clio.Demo..Abstractions.dll": {}
         }
       },
-      "Core.Lib/1.0.0": {
+      "Demo.Core.Lib/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -2648,10 +2648,10 @@
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
-          "bin/placeholder/Core.Lib.dll": {}
+          "bin/placeholder/Demo.Core.Lib.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Core.Lib.dll": {}
+          "bin/placeholder/Demo.Core.Lib.dll": {}
         }
       },
       "Demo.Core7/1.0.0": {
@@ -2659,7 +2659,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Clio.Demo..Abstractions": "1.0.0",
-          "Core.Lib": "1.0.0",
+          "Demo.Core.Lib": "1.0.0",
           "Microsoft.AspNetCore.Components": "7.0.9",
           "Microsoft.AspNetCore.Components.Authorization": "7.0.9",
           "Serilog.Extensions.Hosting": "7.0.0"
@@ -2671,31 +2671,32 @@
           "bin/placeholder/Demo.Core7.dll": {}
         }
       },
-      "Demo.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Demo.Core7": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Demo.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Demo.Data.dll": {}
-        }
-      },
       "Demo.DataManagement/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Demo.Core7": "1.0.0",
-          "Demo.Data": "1.0.0"
+          "DomainData": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Demo.DataManagement.dll": {}
         },
         "runtime": {
           "bin/placeholder/Demo.DataManagement.dll": {}
+        }
+      },
+      "DomainData/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Clio.Demo..Abstractions": "1.0.0",
+          "Demo.Core.Lib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DomainData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DomainData.dll": {}
         }
       }
     }
@@ -7719,7 +7720,7 @@
       "path": "../Abstractions/Abstractions.csproj",
       "msbuildProject": "../Abstractions/Abstractions.csproj"
     },
-    "Core.Lib/1.0.0": {
+    "Demo.Core.Lib/1.0.0": {
       "type": "project",
       "path": "../Core.Lib/Core.Lib.csproj",
       "msbuildProject": "../Core.Lib/Core.Lib.csproj"
@@ -7729,23 +7730,23 @@
       "path": "../Core/Core7.csproj",
       "msbuildProject": "../Core/Core7.csproj"
     },
-    "Demo.Data/1.0.0": {
-      "type": "project",
-      "path": "../Data/Data.csproj",
-      "msbuildProject": "../Data/Data.csproj"
-    },
     "Demo.DataManagement/1.0.0": {
       "type": "project",
       "path": "../DataManagement/DataManagement.csproj",
       "msbuildProject": "../DataManagement/DataManagement.csproj"
+    },
+    "DomainData/1.0.0": {
+      "type": "project",
+      "path": "../DomainData/DomainData.csproj",
+      "msbuildProject": "../DomainData/DomainData.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Clio.Demo..Abstractions >= 1.0.0",
       "Demo.Core7 >= 1.0.0",
-      "Demo.Data >= 1.0.0",
       "Demo.DataManagement >= 1.0.0",
+      "DomainData >= 1.0.0",
       "Microsoft.AspNetCore.SignalR.Client >= 7.0.14",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -7792,8 +7793,8 @@
             "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DataManagement\\DataManagement.csproj": {
               "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DataManagement\\DataManagement.csproj"
             },
-            "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Data\\Data.csproj": {
-              "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\Data\\Data.csproj"
+            "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DomainData\\DomainData.csproj": {
+              "projectPath": "C:\\_work\\Projects\\PlatformDemo.Mk2\\AspDotNetDemo\\DomainData\\DomainData.csproj"
             }
           }
         }

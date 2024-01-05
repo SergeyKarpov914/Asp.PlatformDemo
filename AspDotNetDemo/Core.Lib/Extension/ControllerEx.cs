@@ -1,8 +1,8 @@
-﻿using Clio.Demo.Util.Telemetry.Seri;
+﻿using Clio.Demo.Core.Lib.Util;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections;
 
-namespace Clio.Demo.Core.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
     public static class ControllerEx
     {

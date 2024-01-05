@@ -1,11 +1,13 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Util.Telemetry.Seri;
+using Clio.Demo.Core.Lib.Util;
+using System;
+using System.Collections.Generic;
 
-namespace Clio.Demo.Core7.Pattern
+namespace Clio.Demo.Core.Lib.Pattern
 {
     public class BuilderMaster<T> where T : class, IEntity, new()
     {
-        protected readonly T _entity = new();
+        protected readonly T _entity = new T();
         protected readonly List<Exception> _exceptions = new List<Exception>();
 
         public T Build()

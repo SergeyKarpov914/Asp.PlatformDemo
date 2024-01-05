@@ -1,6 +1,7 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Core.Util;
-using Clio.Demo.Extension;
+using Clio.Demo.Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Pattern;
+using Clio.Demo.Core.Lib.Util;
 using Microsoft.ApplicationInsights.Extensibility.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-using Log = Clio.Demo.Util.Telemetry.Seri.Log;
+using Log = Clio.Demo.Core.Lib.Util.Log;
 
 namespace Clio.Demo.Core7.Component
 {
@@ -220,12 +221,12 @@ namespace Clio.Demo.Core7.Component
                                           })
                                           .OrderBy(x => x.source);
 
-            Log.BlockDbg(this, InjectionGroups.Where(x => !x.source.StartsWith(prefix)).Select(x => $"{x.count.ToString().PadLeft(6)} {x.source}"), "Injection Container ASP");
+            Log.Block(this, InjectionGroups.Where(x => !x.source.StartsWith(prefix)).Select(x => $"{x.count.ToString().PadLeft(6)} {x.source}"), "Injection Container ASP", true);
 
             if (prefix.IsNotEmpty())
             {
-                Log.BlockDbg(this, _services.Where(x => x.ServiceType.Namespace.StartsWith(prefix))
-                                            .Select(x => $"{x.ServiceType.DisplayName().PadLeft(20)} {x.Lifetime}"), $"Injection Container '{prefix}'");
+                Log.Block(this, _services.Where(x => x.ServiceType.Namespace.StartsWith(prefix))
+                                            .Select(x => $"{x.ServiceType.DisplayName().PadLeft(20)} {x.Lifetime}"), $"Injection Container '{prefix}'", true);
             }
         }
 

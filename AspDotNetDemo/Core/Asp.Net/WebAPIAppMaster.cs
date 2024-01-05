@@ -1,10 +1,7 @@
-﻿using Clio.Demo.Core.Util;
+﻿using Clio.Demo.Core.Lib.Util;
 using Clio.Demo.Core7.Component;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using System.Net;
-
-using Log = Clio.Demo.Util.Telemetry.Seri.Log;
 
 namespace Clio.Demo.Core7.Asp
 {

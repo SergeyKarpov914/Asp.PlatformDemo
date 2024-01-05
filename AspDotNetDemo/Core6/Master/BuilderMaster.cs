@@ -1,5 +1,5 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Util.Telemetry.Seri;
+using Clio.Demo.Core.Lib.Util;
 
 namespace Clio.Demo.Core7.Pattern
 {

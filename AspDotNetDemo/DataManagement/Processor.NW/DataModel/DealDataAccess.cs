@@ -1,5 +1,4 @@
 ﻿using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Core7.Pattern;
 using Clio.Demo.Domain.Data.Northwind;
 using Microsoft.Extensions.Configuration;

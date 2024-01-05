@@ -1,5 +1,5 @@
 ﻿using Clio.Demo.Domain.Data.Northwind;
-using Clio.Demo.Extension;
+using Clio.Demo.Core.Lib.Extension;
 
 namespace Clio.Demo.DataPresentation.Elements
 {

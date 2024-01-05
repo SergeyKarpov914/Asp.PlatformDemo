@@ -1,7 +1,7 @@
-﻿using Clio.Demo.Domain.Data.Hbc;
+﻿using Clio.Demo.Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Util;
+using Clio.Demo.Domain.Data.Hbc;
 using Clio.Demo.Domain.Data.Processor.DataModel;
-using Clio.Demo.Extension;
-using Clio.Demo.Util.Telemetry.NLog;
 
 namespace Clio.Demo.Domain.Data.Processor
 {

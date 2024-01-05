@@ -1,4 +1,4 @@
-﻿using Clio.Demo.Util.Telemetry.NLog;
+﻿using Clio.Demo.Core.Lib.Util;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Clio.Demo.OrderCrudServer

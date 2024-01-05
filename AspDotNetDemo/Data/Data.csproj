@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core7.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Hbc\Sql\" />
     <Folder Include="Northwind\Sql\" />
   </ItemGroup>

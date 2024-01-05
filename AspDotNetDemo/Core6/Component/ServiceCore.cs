@@ -1,4 +1,4 @@
-﻿using Clio.Demo.Extension;
+﻿using Clio.Demo.Core.Lib.Extension;
 using Microsoft.Extensions.Configuration;
 
 namespace Clio.Demo.Core7.Component

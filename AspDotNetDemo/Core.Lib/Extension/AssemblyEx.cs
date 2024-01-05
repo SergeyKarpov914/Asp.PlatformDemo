@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace Clio.Demo.Extension
+namespace Clio.Demo.Core.Lib.Extension
 {
 	public static class AssemblyEx
 	{

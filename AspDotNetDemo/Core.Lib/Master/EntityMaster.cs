@@ -1,7 +1,8 @@
 ﻿using Clio.Demo.Abstraction.Interface;
+using System;
 using System.Text.Json.Serialization;
 
-namespace Clio.Demo.Core7.Pattern
+namespace Clio.Demo.Core.Lib.Pattern
 {
     public class EntityMaster : IEntity
     {

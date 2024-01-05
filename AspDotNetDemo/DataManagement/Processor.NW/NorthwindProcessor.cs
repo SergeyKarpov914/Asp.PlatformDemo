@@ -1,10 +1,8 @@
-﻿using Clio.Demo.Core.Component.Master.Pattern;
-using Clio.Demo.Domain.Data.Northwind;
+﻿using Clio.Demo.Core.Lib.Extension;
+using Clio.Demo.Core.Lib.Util;
 using Clio.Demo.DataManagement.Processor.NW.DataModel;
-using Clio.Demo.Extension;
-using Clio.Demo.Util.Telemetry.Seri;
+using Clio.Demo.Domain.Data.Northwind;
 using OrderService.Data;
-using Clio.Demo.Core.Extension;
 
 namespace Clio.Demo.DataManager.Processor
 {

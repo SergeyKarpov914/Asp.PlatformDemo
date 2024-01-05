@@ -1,8 +1,7 @@
-﻿using Clio.Demo.Core.Extension;
+﻿using Clio.Demo.Core.Lib.Extension;
 using Clio.Demo.Abstraction.Interface;
-using Clio.Demo.Domain.Data.Northwind;
 using Clio.Demo.DataManager.Processor;
-using Clio.Demo.Extension;
+using Clio.Demo.Domain.Data.Northwind;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Clio.Demo.WebAPIApp.Controller
