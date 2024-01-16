@@ -149,5 +149,4 @@ namespace Clio.Demo.WebAPIApp.Controller
         public CrudException(bool multi = true) : base($"NULL {typeof(T).Name} {(multi ? "collection" : "")} returned by processor")
         { }
     }
-
 }

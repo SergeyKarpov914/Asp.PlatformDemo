@@ -75,9 +75,8 @@ namespace Clio.Demo.Core7.Component
                     builder.Host.UseSerilog(); // serilog extension 
                     break;
                 case Nlog:
-                    break;
                 default:
-                    throw new Exception($"Logger type is not in configured or not supported");
+                    break;
             }
             return builder.Services.BuildServiceProvider().GetRequiredService<ILog>();
         }
