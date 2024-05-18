@@ -102,3 +102,5 @@ AspDotNetDemo/BlazorWasmDashboard/obj/
 AspDotNetDemo/Core6/obj/
 AspDotNetDemo/BlazorWasmDashboard/bin/
 AspDotNetDemo/DomainData/obj/
+AspDotNetDemo/BlazorSalesDashboard/obj/
+AspDotNetDemo/WebApiSignalRApp/obj/
