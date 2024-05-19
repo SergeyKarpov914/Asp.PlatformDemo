@@ -23,9 +23,6 @@ Platform solution structure shows three groups of assemblies:
 
 The assemblies from the Core group are present in every solution built on top of the platform. The assemblies from the Domain group represent custom dependencies and are injected into a custom solution at runtime.
 
-At the application start, the static and injected assemblies are caprured in the log: 
-
-![Custom solution structure](assets/images/AspDotNetDemoStart.png)
 
 
 ## Code annotation
@@ -168,6 +165,11 @@ Here we see actual class which supports Create and Read operations for Order ent
 
 The only two code snippets which solution creator has to provide is constructor and interface derived from generic with Order parameter. The interface is needed for dependency injection container.
 
+At the application start, the static and injected assemblies are caprured in the log: 
+
+![Custom solution structure](assets/images/AspDotNetDemoStart.png)
+
+Note the IOrderDataAccess assembly in the injected group.
 
 ## Summary
 
