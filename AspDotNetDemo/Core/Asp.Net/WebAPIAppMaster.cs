@@ -15,23 +15,19 @@ namespace Clio.Demo.Core7.Asp
 
             addWebHost(builder);
             addTelemetry(builder);
-
             addContainerComponents(builder);
-
-            /////////////////////////////////////////////////////////////////////////
-            addCustomInjectables();
-            /////////////////////////////////////////////////////////////////////////
+            
+            addCustomInjectables(); // by implementation class
 
             WebApplication app = createWebApp(builder);
 
-            /////////////////////////////////////////////////////////////////////////
-            addSignalRHub(app);
-            /////////////////////////////////////////////////////////////////////////
-
-            processConfiguration(args);
-            processDIContainer();
+            //addSignalRHub(app);
 
             LogUtil.RuntimeInfo(this, $"WebApiApp server start", args, assemblies());
+
+            processConfiguration(args);
+            processDIContainer(false);
+
             Log.Block(this, new[] { $"API Server is listening on {_urls.Replace("*", Dns.GetHostEntry(Dns.GetHostName()).HostName)}" }, "WebAPI Hosting start");
 
             app.Run();

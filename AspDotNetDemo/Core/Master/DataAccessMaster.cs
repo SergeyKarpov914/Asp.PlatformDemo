@@ -33,19 +33,14 @@ namespace Clio.Demo.Core7.Pattern
 
         public async Task Create(T entity)
         {
-            Steps steps = Steps.Start(this, _typeName);
             try
             {
                 await create(entity);
             }
             catch (Exception ex)
             {
-                steps.Error(ex);
+                Log.Error(this, ex);
                 throw;
-            }
-            finally
-            {
-                steps.Stop();
             }
         }
 

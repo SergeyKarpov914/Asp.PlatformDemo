@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>disable</Nullable>
-    <AssemblyName>Clio.Demo..$(MSBuildProjectName)</AssemblyName>
+    <AssemblyName>Clio.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>Clio.Demo.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 

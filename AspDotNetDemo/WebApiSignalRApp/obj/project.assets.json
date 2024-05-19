@@ -2611,7 +2611,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "Clio.Demo..Abstractions/1.0.0": {
+      "Clio.Abstractions/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -2620,17 +2620,17 @@
           "Microsoft.Extensions.Http": "2.1.1"
         },
         "compile": {
-          "bin/placeholder/Clio.Demo..Abstractions.dll": {}
+          "bin/placeholder/Clio.Abstractions.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Clio.Demo..Abstractions.dll": {}
+          "bin/placeholder/Clio.Abstractions.dll": {}
         }
       },
-      "Demo.Core.Lib/1.0.0": {
+      "Clio.Core.Lib/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Clio.Demo..Abstractions": "1.0.0",
+          "Clio.Abstractions": "1.0.0",
           "Dapper": "2.1.28",
           "Microsoft.ApplicationInsights": "2.22.0",
           "Microsoft.ApplicationInsights.AspNetCore": "2.22.0",
@@ -2648,34 +2648,34 @@
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
-          "bin/placeholder/Demo.Core.Lib.dll": {}
+          "bin/placeholder/Clio.Core.Lib.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Demo.Core.Lib.dll": {}
+          "bin/placeholder/Clio.Core.Lib.dll": {}
         }
       },
-      "Demo.Core7/1.0.0": {
+      "Clio.Core7/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Clio.Demo..Abstractions": "1.0.0",
-          "Demo.Core.Lib": "1.0.0",
+          "Clio.Abstractions": "1.0.0",
+          "Clio.Core.Lib": "1.0.0",
           "Microsoft.AspNetCore.Components": "7.0.9",
           "Microsoft.AspNetCore.Components.Authorization": "7.0.9",
           "Serilog.Extensions.Hosting": "7.0.0"
         },
         "compile": {
-          "bin/placeholder/Demo.Core7.dll": {}
+          "bin/placeholder/Clio.Core7.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Demo.Core7.dll": {}
+          "bin/placeholder/Clio.Core7.dll": {}
         }
       },
       "Demo.DataManagement/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Demo.Core7": "1.0.0",
+          "Clio.Core7": "1.0.0",
           "DomainData": "1.0.0"
         },
         "compile": {
@@ -2689,8 +2689,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Clio.Demo..Abstractions": "1.0.0",
-          "Demo.Core.Lib": "1.0.0"
+          "Clio.Abstractions": "1.0.0",
+          "Clio.Core.Lib": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DomainData.dll": {}
@@ -7715,17 +7715,17 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "Clio.Demo..Abstractions/1.0.0": {
+    "Clio.Abstractions/1.0.0": {
       "type": "project",
       "path": "../Abstractions/Abstractions.csproj",
       "msbuildProject": "../Abstractions/Abstractions.csproj"
     },
-    "Demo.Core.Lib/1.0.0": {
+    "Clio.Core.Lib/1.0.0": {
       "type": "project",
       "path": "../Core.Lib/Core.Lib.csproj",
       "msbuildProject": "../Core.Lib/Core.Lib.csproj"
     },
-    "Demo.Core7/1.0.0": {
+    "Clio.Core7/1.0.0": {
       "type": "project",
       "path": "../Core/Core7.csproj",
       "msbuildProject": "../Core/Core7.csproj"
@@ -7743,8 +7743,8 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Clio.Demo..Abstractions >= 1.0.0",
-      "Demo.Core7 >= 1.0.0",
+      "Clio.Abstractions >= 1.0.0",
+      "Clio.Core7 >= 1.0.0",
       "Demo.DataManagement >= 1.0.0",
       "DomainData >= 1.0.0",
       "Microsoft.AspNetCore.SignalR.Client >= 7.0.14",

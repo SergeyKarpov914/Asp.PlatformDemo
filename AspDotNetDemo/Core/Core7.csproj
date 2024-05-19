@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <RootNamespace>Clio.Demo.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-    <AssemblyName>Demo.$(MSBuildProjectName)</AssemblyName>
+    <AssemblyName>Clio.$(MSBuildProjectName)</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

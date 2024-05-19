@@ -1,6 +1,8 @@
 ﻿using Clio.Demo.Abstraction.Interface;
 using Clio.Demo.Core.Lib.Gateway;
+using Clio.Demo.Core.Lib.Pattern;
 using Clio.Demo.Core7.Asp;
+using Clio.Demo.Core7.Component;
 using Clio.Demo.DataManagement.Processor.NW.DataModel;
 using Clio.Demo.DataManager.Processor;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,7 +37,9 @@ namespace WebAPIApp
             {
                 return new Type[]
                 {
-                    typeof(WebAPIAppMaster),
+                    typeof(IEntity),
+                    typeof(LogMaster),
+                    typeof(AspNetCore),
                 };
             }
         }

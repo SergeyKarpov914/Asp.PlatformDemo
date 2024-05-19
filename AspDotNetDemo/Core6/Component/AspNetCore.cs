@@ -196,24 +196,26 @@ namespace Clio.Demo.Core7.Component
             return $"{ConfigName}.{ConfigExt}";
         }
 
-        protected void processDIContainer()
+        protected void processDIContainer(bool showCommon = true)
         {
             string prefix = _configuration.GetValue<string>("prefix") ?? "n/a";
 
-            var InjectionGroups = _services.GroupBy(s => s.ServiceType.Namespace)
-                                          .Select(group => new
-                                          {
-                                              source = group.Key,
-                                              count = group.Count()
-                                          })
-                                          .OrderBy(x => x.source);
+            if (showCommon)
+            {
+                var InjectionGroups = _services.GroupBy(s => s.ServiceType.Namespace)
+                                              .Select(group => new
+                                              {
+                                                  source = group.Key,
+                                                  count = group.Count()
+                                              })
+                                              .OrderBy(x => x.source);
 
-            Log.Block(this, InjectionGroups.Where(x => !x.source.StartsWith(prefix)).Select(x => $"{x.count.ToString().PadLeft(6)} {x.source}"), "Injection Container ASP", true);
-
+                Log.Block(this, InjectionGroups.Where(x => !x.source.StartsWith(prefix)).Select(x => $"{x.count.ToString().PadLeft(6)} {x.source}"), "Injection Container ASP", true);
+            }
             if (prefix.IsNotEmpty())
             {
                 Log.Block(this, _services.Where(x => x.ServiceType.Namespace.StartsWith(prefix))
-                                            .Select(x => $"{x.ServiceType.DisplayName().PadLeft(20)} {x.Lifetime}"), $"Injection Container '{prefix}'", true);
+                                            .Select(x => $"{x.ServiceType.DisplayName().PadLeft(30)} {x.ServiceType.Assembly.RunTime()} {x.Lifetime}"), $"Injection Container '{prefix}'", true);
             }
         }
 

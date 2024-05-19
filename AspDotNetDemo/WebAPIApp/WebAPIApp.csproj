@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <AssemblyName>Demo.$(MSBuildProjectName)</AssemblyName>
+    <AssemblyName>Clio.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>Clio.Demo.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
