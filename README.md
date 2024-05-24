@@ -4,7 +4,7 @@ The code for ASP Demo platform was written in summer of 2023. It is a simplified
 
 The platform is a collection of .NET assempblies which is used to build custom CRUD-type API servers and Blazor Web UIs. 
 
-The architectural background for the ASP Client-Server platform can be found in couple of documets written at the same period of time:
+The architectural background for the ASP Client-Server platform can be found in the documets written at the same period of time:
 
 https://github.com/SergeyKarpov914/Asp.PlatformDemo/blob/master/Docs/CleanArchitectureStudy.md
 https://github.com/SergeyKarpov914/Asp.PlatformDemo/blob/master/Docs/CleanArchitectureDemo.md
