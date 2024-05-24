@@ -11,7 +11,7 @@ https://github.com/SergeyKarpov914/Asp.PlatformDemo/blob/master/Docs/CleanArchit
 
 ## Platform Demo vs Production structure
 
-The side by side summary of the main components of the ASP platform shows the difference between (free) Demo and Production versions:
+The side by side summary of the main components of the ASP platform shows the difference between (free) Demo and Production versions (S - simplified, F - full):
 
 | Component Class    | Subclass  | Demo        | Production    |
 | :---        |    :----:   | :----:   |          ---: |
