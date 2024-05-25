@@ -33,7 +33,7 @@ The side by side summary of the main components of the ASP platform shows the di
 | Pattern   | Builder           |  S    |   F      |
 | Pattern   | Producer-Consumer           |   S   |   F      |
 | Pattern   | Cache           |      |   F      |
-| Pattern   | Book-of-Work           |      |   F      |
+| Pattern   | Unit-of-Work           |      |   F      |
 | Pattern   |  other          |   S   |   F      |
 | Telemetry   |            |   S   |   F      |
 | Test   |            | S   |   F      |
