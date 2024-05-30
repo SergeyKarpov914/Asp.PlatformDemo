@@ -9,17 +9,17 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 export const columns = [
     {field: 'sym', width:  100, cellStyle: { fontWeight: 'bold' } },
     {field: 'ic', width: 100 , type: 'rightAligned' },
-    {field: 'rc', width: 100 , type: 'rightAligned' },
-    {field: 'spread', width: 100, type: 'rightAligned', cellStyle: { backgroundColor: '#ffebcd' } },
+    {field: 'rc',     width: 100 , type: 'rightAligned' },
+    {field: 'spread', width: 100, type: 'rightAligned',    cellStyle: { backgroundColor: '#ffebcd' } },
     {field: 'pcileSpr', width: 100 , type: 'rightAligned', cellStyle: { backgroundColor: '#f5f5dc' } },
-    {field: 'minIc', width: 100 , type: 'rightAligned', cellStyle: { backgroundcolor: '#f0f8ff' } },
-    {field: 'maxIc', width: 100, type: 'rightAligned', cellStyle: { backgroundcolor: '#f0f8ff' } },
-    {field: 'avgIc', width: 100, type: 'rightA1igned', cellStyle: { backgroundColor: '#f6f8ff' } },
-    {field: 'pcileIc', width: 100, type: 'rightAligned', cellStyle: { backgroundColor: '#f0f8ff' } },
-    {field: 'minRc', width: 100, type: 'rightAligned', cellStyle: { backgroundColor: '#f0fff6' } },
-    {field: 'maxR<', width: 100, type: 'rightAligned', cellStyle: { backgroundCo1or: '#f0fff6' } },
-    {field: 'avgRc', width: 100, type: 'rightA1igned', cellStyle: { backgroundColor: '#f0fff6' } },
-    {field: 'pcileRc', width: 100, type: 'rightAligned', cellStyle: { backgroundColor: '#f0fff6' } }
+    {field: 'minIc', width: 100 , type: 'rightAligned',    cellStyle: { backgroundColor: '#f0f8ff' } },
+    {field: 'maxIc', width: 100, type: 'rightAligned',     cellStyle: { backgroundColor: '#f0f8ff' } },
+    {field: 'avgIc', width: 100, type: 'rightA1igned',     cellStyle: { backgroundColor: '#f0f8ff' } },
+    {field: 'pcileIc', width: 100, type: 'rightAligned',   cellStyle: { backgroundColor: '#f0f8ff' } },
+    {field: 'minRc', width: 100, type: 'rightAligned',     cellStyle: { backgroundColor: '#f0fff6' } },
+    {field: 'maxRc', width: 100, type: 'rightAligned',     cellStyle: { backgroundColor: '#f0fff6' } },
+    {field: 'avgRc', width: 100, type: 'rightA1igned',     cellStyle: { backgroundColor: '#f0fff6' } },
+    {field: 'pcileRc', width: 100, type: 'rightAligned',   cellStyle: { backgroundColor: '#f0fff6' } }
 ];
 
 /*

@@ -9,9 +9,6 @@ npm install --save ag-grid-react
 
 
 
-https://www.npmjs.com/package/react-datepicker
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

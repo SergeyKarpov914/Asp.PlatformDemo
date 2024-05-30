@@ -1,6 +1,5 @@
 import '../App.css';
 
-import {AgGridReact} from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
@@ -10,9 +9,8 @@ export const styles = {
         flex: 1,
         justifyContent: "left",
         alignltems: "center",
-        marginTop: "20px",
+        marginTop: "12px",
         marginLeft: "26px",
-        height: "86px"
     },
     heading: {
         color: "green",
@@ -24,9 +22,9 @@ export const styles = {
         alignItems: 'left',
         justifytontent: 'space-around',
         marginTop: 'lﬂpx',
-        borderRadius: "Spx",
         backgroundCo1or: "white",
-        padding: '16px',
+        padding: '12px',
+        borderRadius: "Spx",
         boxShadow: '0px 2px 3.84px rgba(9, 0, 9, 6.25)',
     },
     radioButton: {
@@ -44,7 +42,7 @@ export const styles = {
     datePicker: {
         marginLeft: "60px",
         marginRight: "12px",
-        height: "40px",
+        height: "20px",
         padding: "1px",
         marginBottom: "1px",
     },

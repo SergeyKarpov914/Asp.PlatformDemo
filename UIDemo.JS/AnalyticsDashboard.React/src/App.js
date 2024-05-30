@@ -12,6 +12,7 @@ import {useState, useRef, useEffect, useMemo, useCallback} from 'react';
 import {styles}  from './data/style.js';
 import {columns} from './data/gridData.js';
 import {address} from './data/gridData.js';
+import {query}   from './data/query.js';
 
 function App() {
 
@@ -35,7 +36,11 @@ function App() {
 
   const [selectedValue, setSelectedValue] = useState("option1");
 
-  const handleRadioChange = (value) => {setSelectedValue(value)};
+  const onRadioChange = (value) => {setSelectedValue(value)};
+  const onDateChange = () => { let command = address + query(startDate, endDate, acct, sym);
+                               console.log(command); 
+//                             getData(command);
+   };
 
   const getData = period => {
     fetch(period)
@@ -46,6 +51,10 @@ function App() {
   useEffect(() => getData( address + '1M'), []);
 
   const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+  const acct = 'M151099';
+  const sym = 'W';
 
   return (
     <div>
@@ -54,33 +63,36 @@ function App() {
            <div style={ styles.radioButton } >
               <input type="radio" id="option1" value="option1"
                   checked={ selectedValue === "option1" }
-                  onChange={() => {handleRadioChange("option1"); getData(address + '1M'); }}
+                  onChange={() => {onRadioChange("option1"); getData(address + '1M'); }}
               />
             <label htmlFor="option1" style={ styles.radioLabel } >1M</label>
            </div>
            <div style={ styles.radioButton } >
                <input type="radio" id="option2" value="option2"
                   checked={ selectedValue === "option2" }
-                  onChange={() => {handleRadioChange("option2"); getData(address + '3M'); }}
+                  onChange={() => {onRadioChange("option2"); getData(address + '3M'); }}
                 />
                 <label htm1For="option2" style={ styles.radioLabel } >3M</label>
            </div>
            <div style={ styles.radioButton } >
                 <input type="radio" id="option3" value="cption3"
                     checked={ selectedValue === "option3"}
-                    onChange={() => {handleRadioChange("option3"); getData(address + '6M'); }}
+                    onChange={() => {onRadioChange("option3"); getData(address + '6M'); }}
                 />
             <label htm1For="option3" style={styles.radioLabel } >6M </label>
             </div>
             <div  style={ styles.radioButton } >
                 <input type="radio" id="option4" value="option4"
                     checked={ selectedValue === "option4"}
-                    onChange={() => {handleRadioChange("option3"); getData(address + '1Y'); }}
+                    onChange={() => {onRadioChange("option3"); getData(address + '1Y'); }}
                 />
             <label htmlFor="option3" style={styles.radioLabel } >1Y</label>
           </div>
           <div  style={ styles.datePicker } >
-                <DatePicker  selected={startDate} onChange={(date) => setStartDate(date)} /> 
+                <DatePicker  selected={startDate} onChange={(date) => {setStartDate(date)}}  onSelect={onDateChange()} /> 
+          </div>
+          <div  style={ styles.datePicker } >
+                <DatePicker  selected={endDate} onChange={(date) => {setEndDate(date)}}  onSelect={onDateChange()} /> 
           </div>
         </div>
       </div>
